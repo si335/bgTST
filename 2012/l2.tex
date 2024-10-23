@@ -1,0 +1,30 @@
+\documentclass[../TST.tex]{subfiles}
+\begin{document}
+
+\begin{pproblem}{\ }
+\begin{subpart}
+	\item Find the moment of inertia of a rectangle of mass $m$ and sides $a$ and $b$ with respect to an axis passing through its centre of mass perpendicularly to its plane. \score{1.0}
+	\item A sheet of size AN is defined as a rectangle of surface area $2^{-N}\,\unit{m^2}$ and a ratio of $\sqrt{2}$ between its sides. Calculate the oscillation period of a vertical A4 sheet about a horizontal axis passing perpendicularly to the sheet through the middle of its longer side. Your answer should be accurate to 3 significant figures. \score{2.0}
+\end{subpart}
+\end{pproblem}
+
+\ifprob \else
+\begin{solution} (a) The moment of inertia about the centre of mass is 
+\begin{equation*}
+\sum \Delta m(x^2+y^2),
+\end{equation*}
+where $x\in\left[-\frac{a}{2};\,+\frac{a}{2}\right]$ and $y\in\left[-\frac{b}{2};\,+\frac{b}{2}\right]$. Along each axis, the mass distribution is the same as that of a uniform rod. So, from the $x^2$ term we will get a contribution of $\frac{1}{12}ma^2$, and likewise from the $y^2$ term we have $\frac{1}{12}mb^2$. The answer is \fbox{${I=\frac{1}{12}m(a^2+b^2)}$}.\\
+
+(b) If the shorter side of sheet is $b$, the longer one is $\sqrt{2}b$. Using the parallel axis theorem, the moment of inertia with respect to the pivot is
+\begin{equation*}
+I'=I+m\left(\frac{b}{2}\right)^2=\frac{1}{12}m \left(a^2+4b^2\right) = \frac{1}{2}mb^2.
+\end{equation*}
+The sheet is a physical pendulum with a distance of $b/2$ between the pivot and the centre of mass. Its torque equation is
+\begin{equation*}
+	I'\ddot{\theta}+mg\left(\frac{b}{2}\right)\theta=0,
+\end{equation*}
+which describes oscillations with a period of $T=2\pi\sqrt{\frac{2I}{mgb}}=2\pi\sqrt{\frac{b}{g}}$.
+Now, the length of $b$ for a sheet of size $AN$ can be found from $(2^{1/2}b)b=2^{-N}\unit{m^2}$, which comes out as $b=2^{-\frac{1}{2}\left(N+\frac{1}{2}\right)}\,\unit{m}$. For $N=4$ the period is then \fbox{$T=\qty{0.920}{s}$}.
+\end{solution}
+\fi
+\end{document}

@@ -1,0 +1,44 @@
+\documentclass[../TST.tex]{subfiles}
+\begin{document}
+\begin{eproblem}[Diode and paperclip circuit]{\ \\[5pt]}
+\textit{Equipment:}\\
+Circuit consisting of two identical diodes and a paperclip (the diodes are connected in parallel and the paperclip is in series with one of the diodes), rectifier which can supply either constant voltage or constant current, two multimeters, \href{https://www.nutsvolts.com/magazine/article/September2016_Capacitor-Resistor-Substitution-Boxes}{\color{blue} resistor substitution box} (current not to exceed $\qty{100}{mA}$), wires, screwdriver, graph paper.\\
+
+\textit{Task 1. Finding the resistance of the paperclip $R$.}\\
+In this part of the problem you will measure the I-V curve of the circuit (without using the substitution box) for both positive and negative (i.e. with reversed polarity) voltages.\\
+
+\textbf{Note:} Do not exceed a current of $\qty{2.5}{A}$.
+\begin{subpart}
+	\item Sketch the circuit that you have assembled.
+	\item Write down the ranges that you use for the multimeters.
+	\item Describe how $R$ can be calculated from your measurements.
+	\item How will you use the rectifier -- to supply a constant voltage or a to supply a constant current?
+\end{subpart}
+\textbf{Note:} The characteristics of the diodes have a strong dependence on temperature.
+\begin{subpart}[resume]
+	\item \textbf{Quickly} measure the I-V curve of the circuit as the voltage/current is raised. After you have reached the maximum voltage/current, wait until the open diode reaches its equilibrium temperature (be careful not to burn yourself on one of the diodes). Then, \textbf{quickly} measure the I-V curve of the circuit as the voltage/current is lowered. Repeat this for voltages of the opposite polarity. Present your results in a table.
+	\item Write down whether a diode is open when a positive potential is applied on the terminal with the white band, or vice versa.
+	\item Decide on the dataset that you will use for determining $R$. Choose between the values taken when raising the current/voltage and those taken when lowering the current/voltage.
+	\item Plot a graph from which you can find $R$.
+	\item Find $R$ from the graph.
+	\item Using the graph, find your error $\Delta R$.\\
+\end{subpart}
+
+\textit{Task 2. Finding the reverse-bias saturation current of the diodes $I_\mathrm{S}$.}\\
+The current $I_\mathrm{S}$ is the maximum current through a closed diode. The I-V curve of a diode can be modelled by the Shockley diode equation,
+\begin{equation*}
+	I=I_\mathrm{S}\left(e^{\frac{eU}{nkT}}-1\right)
+,
+\end{equation*}
+where $e$ is the charge of the electron, $k$ is the Boltzmann constant, $T$ is the absolute temperature, and $n$ is a number close to 1.
+
+\begin{subpart}
+	\item Find an approximation of the formula above which can be used when measuring the forward I-V curve for voltages on the order of a few hundred mV at room temperature.
+	\item Apply a voltage of such polarity that the diode with no paperclip attached to it is open. Measure an appropriate part of the I-V curve for currents under $\qty{100}{mA}$. Use the resistor substitution box if necessary. Present your results in a table.
+	\item Plot your data in appropriate variables.
+	\item Using the plot, find $I_\mathrm{S}$ and $n$.
+\end{subpart}
+Call the examiner if you suspect that a multimeter's fuse has blown, or in case of any other technical difficulties.
+\end{eproblem}
+
+\end{document}

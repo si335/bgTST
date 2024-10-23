@@ -1,0 +1,42 @@
+\documentclass[../TST.tex]{subfiles}
+\begin{document}
+\begin{pproblem}[A microscopic model for resistance]
+The simplest microscopic model for resistance assumes that the free electrons in metals are accelerated from rest by the external electric field for time $\tau$, after which they collide with the ionic lattice. This $\tau$ is called the mean free time. After colliding with the lattice, the electrons lose all of their velocity. Then they begin accelerating again.
+\begin{subpart}
+	\item The electron number density in a metal is $n$ and its resistivity is $\rho$. Express $\tau$ in terms of these parameters. \score{1.0}
+	\item Find the ratio $P/\frac{\Delta E_\mathrm{kin}}{\Delta t}$ between the power $P$ dissipated in a conductor of length $l$ and cross section $S$, and the kinetic energy $\frac{\Delta E_\mathrm{kin}}{\Delta t}$ lost by the electrons (as heat) per unit time. \score{1.0}
+	\item Find the mean free time for the electrons in aluminium. Aluminium ions have charge $q=+3e$. The atomic mass of aluminium is $A=27.0$, its density is $\mu=\qty{2.70}{g/cm^3}$, and its resistivity is $\rho=\qty{28.2e-9}{\ohm.m}$.\score{1.0}
+\end{subpart}
+\end{pproblem}
+
+\ifprob \else
+\begin{solution} (a) The time-averaged current in a conductor of cross section $S$ due to electrons of mean velocity is given by $\langle v \rangle$ is $\langle I\rangle=neS\langle v \rangle$, which can be seen by tracking the number of charge carriers passing through an area $S$. The time-averaged current density will then be $\langle j \rangle = ne \langle v \rangle$. Let's denote the electric field in the conductor by $E$. Now, each free electron moves with a uniform acceleration $a=\frac{eE}{m_e}$ for time $\tau$ until it collides with the lattice. This means that it covers a distance $s=\frac{a\tau^2}{2}$ in time $\tau$, which corresponds to a mean velocity of $\langle v \rangle=\frac{s}{\tau}=\frac{a\tau}{2}$. The current density is then 
+\begin{equation*}
+	\langle j \rangle=\frac{nea\tau}{2}= \frac{ne^2 E \tau}{2m_e}.
+\end{equation*}
+	Conversely, Ohm's law gives us $ \langle j \rangle = \frac{E}{\rho}$. We match the two expressions to find
+	\begin{equation*}
+		\boxed{\tau=\frac{2m_e}{ne^2\rho}.}
+	\end{equation*}
+(b) The standard way to calculate the power is
+\begin{equation*}
+P=I^2R=I^2\left(\frac{\rho l}{S}\right)=\langle j \rangle^2 \rho (Sl)
+.
+\end{equation*}
+Meanwhile, on a small scale, each electron loses energy $\frac{m_e (a\tau)^2}{2}$ per time $\tau$, so the total energy loss rate in a conductor of volume $V=Sl$ is
+\begin{equation*}
+\frac{\Delta E_\mathrm{kin}}{\Delta t}=n(Sl) \frac{m_ea^2\tau}{2}
+.
+\end{equation*}
+The ratio we are looking for is
+\begin{equation*}
+	\left. P \middle/ \left( \frac{\Delta E_\mathrm{kin}}{\Delta t}\right) \right. = \frac{2\rho \langle j \rangle^2}{nm_ea^2\tau} = \frac{2\rho E^2}{\rho^2nm_e \left( \frac{e^2E^2}{m_e^2}\right)\left(\frac{2m_e}{ne^2\rho}\right)} = \boxed{1.}
+\end{equation*}
+(c) The mass of a single aluminium atom is $Au$, so the number density of the atoms is $\frac{\mu}{Au}$. There are three free electrons per atom, so the electron number density is $n=\frac{3\mu}{Au}$. Then
+\begin{equation*}
+	\boxed{\tau=\frac{2Au m_e}{3\mu e^2\rho}=\qty{1.4e-14}{s}.} 
+\end{equation*}
+
+\end{solution}
+\fi
+\end{document}

@@ -1,0 +1,48 @@
+\documentclass[../TST.tex]{subfiles}
+\begin{document}
+
+\begin{pproblem}
+A particle of mass $m$ and charge $q$ is located at the origin of a Cartesian coordinate system at time $t=0$. Around the particle there is a constant homogeneous magnetic field $B$ along $Oz$ and an oscillating homogeneous electric field  $E(t)=E_0\sin(\omega t)$ along $Ox$, with $\omega=\frac{qB}{m}$. Assume that the particle moves along an Archimedean spiral given by $r(\varphi)=A\varphi$ in polar coordinates. Here $A$ is a constant and $\varphi$ is measured starting from $Ox$. If the particle moves with a constant angular velocity $\omega$, find the increase in the radius vector per turn.
+\end{pproblem}
+
+\ifprob \else
+	\begin{solution} Let $\mathbf{E}(t)=E_0 \sin{(\omega t)}\hat{\mathbf{x}}$ and $\mathbf{B}=B \hat{\mathbf{z}}$. The total force on the particle is $\mathbf{F}= q\mathbf{v}\times \mathbf{B}+q\mathbf{E}$, which has components
+	\begin{align*}
+		F_x &= m \frac{\mathrm{d}v_x}{\mathrm{d}t}=qE_0\sin{(\omega t)}+qv_yB\\
+		F_y &= m \frac{\mathrm{d}v_y}{\mathrm{d}t}=-qv_xB.
+	\end{align*}
+\end{solution}
+We differentiate the equation for $F_x$ and then substitute the result for $\frac{\mathrm{d}v_y}{\mathrm{d}t}$ from the $F_y$ equation. This way we get an equation in $v_x$ only:
+\begin{equation*}
+	\frac{\mathrm{d}^2v_x}{\mathrm{d}{t}^2}+\omega^2v_x=\left(\frac{E_0}{B}\right) \omega^2 \cos{(\omega t)} .
+\end{equation*}
+Now the idea is to find $v_x$, then get $v_y$, then integrate the velocities to obtain $x(t)$ and $y(t)$, and thus derive $r(t)$. However, the differential equation at hand is rather difficult. It represents driven harmonic oscillations at resonance, meaning that the driving term's frequency is the same as the natural frequency of the system $\omega$. In this case, a trial solution of the sort $v_x=C\cos{(\omega t+\theta)}$ will not work. Instead, the problem statement wants us to try something else, namely $r(t)=A(\omega t)$, which corresponds to $x(t)=A(\omega t)\cos{(\omega t)}$ and\footnote{Note that $v_x(0)\neq 0$. In the original problem statement the particle is initially at rest, which makes the problem overdetermined.}
+\begin{equation*}
+v_x(t)=A\omega(\cos{(\omega t)}-(\omega t)\sin{(\omega t)}).
+\end{equation*}
+Our goal is to determine a constant $A$ which satisfies the differential equation for $v_x$. To check this, we will also need the second derivative of $v_x$. Using the shortcut $\frac{\mathrm{d}v_x}{\mathrm{d}t}=\omega \frac{\mathrm{d}v_x}{\mathrm{d(\omega t)}}$, we can quickly find
+\begin{equation*}
+	\dot{v}_x=A\omega^2\left(-2\sin{(\omega t)}-(\omega t)\cos{(\omega t)}\right) 
+,
+\end{equation*}
+\begin{equation*}
+	\ddot{v}_x=A\omega^3\left(-3\cos{(\omega t)}+(\omega t)\sin{(\omega t)}\right) 
+.
+\end{equation*}
+After we plug this into the differential equation, the nasty terms cancel, and we have
+\begin{equation*}
+	-2A\omega\cos{(\omega t)}=\left(\frac{E_0}{B}\right) \cos{(\omega t)}
+,
+\end{equation*}
+from which we extract $A=-\frac{mE_0}{2qB^2}$. The trajectory of the particle is then 
+\begin{equation*}
+r(t)=-\frac{E_0 t}{2B}
+.
+\end{equation*}
+It is completely fine to have a negative $r(t)$. For example, if $r=\qty{-2}{m}$ at $\varphi=\ang{30}$, this just means that the particle is at a distance of $\qty{2}{m}$ from the origin in a direction $\varphi'=\ang{30}+\ang{180}=\ang{210}$ from the $x$-axis. Back to the problem at hand. In a single turn $\varphi$ increases by $2\pi$. Since the distance to the origin is $r=A\varphi$, the increase in the radius vector's magnitude per turn will be
+\begin{equation*}
+	\Delta r = 2\pi\cdot\left|A\right|= \boxed{\frac{\pi m E_0}{qB^2}.}
+\end{equation*}
+
+\fi
+\end{document}

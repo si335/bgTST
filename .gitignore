@@ -1,0 +1,8 @@
+#Ignore LaTeX byproducts
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run
+*.synctex.gz

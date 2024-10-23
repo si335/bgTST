@@ -1,0 +1,83 @@
+\documentclass[../TST.tex]{subfiles}
+\begin{document}
+\begin{large}
+	\textbf{Short Exam 2}
+\end{large}
+
+\begin{sproblem}
+A point charge $q$ of mass $m$ is initially at rest. The charge is placed in a homogeneous electric field $E$ and a homogeneous magnetic field $B$ at right angles to $E$. It turns out that the charge's trajectory is a periodic curve, i.e. the trajectory will consist of many identical segments. Note that the charge's motion can be represented as a superposition of two simpler sorts of motion.
+\begin{subpart}
+	\item Find the time $T$ in which the charge covers one segment of its trajectory. In other words, find the time interval between two consecutive instants at which the charge is at rest. 
+	\item Find the spatial periodicity of the curve $L$. In other words, find the distance between two neighbouring positions where the charge is at rest.
+	\item Find the maximum velocity of the charge $v_\mathrm{max}$.
+	\item Find the `width' of the trajectory $H$.
+	\item What are the two simpler sorts of motion that give rise to the resultant motion of the charge? What are their parameters?
+	\item Find the radius of curvature $r_\mathrm{curv}$ of the trajectory at the points of maximum velocity $v_\mathrm{max}$.
+\end{subpart}
+\end{sproblem}
+
+\ifprob \else
+\begin{solution} 
+(a) We will assume that the electric field $\mathbf{E}$ is directed along $\hat{\mathbf{x}}$  and that the magnetic field $\mathbf{B}$ is directed along $\hat{\mathbf{z}}$. The total force on the charge is $\mathbf{F}=q\mathbf{E}+q\mathbf{v}\times\mathbf{B}$. This force is perpendicular to $B$, so the motion is constrained to the $xy$-plane. We want to find equations for the velocity components $v_x$ and $v_y$. Writing the fields as $\mathbf{E}=E \hat{\mathbf{x}}$ and $\mathbf{B}=B \hat{\mathbf{z}}$, we find
+\begin{align}
+	ma_x&= qv_yB+qE, \label{fir}\\
+	ma_y&=-qv_xB. \label{sec} 
+\end{align}
+We differentiate \eqref{fir} and plug in \eqref{sec}, resulting in
+\begin{equation*}
+	\ddot{v}_x=-\left(\frac{qB}{m}\right)^2v_x
+.
+\end{equation*}
+Setting $\frac{qB}{m}\equiv\omega_c$ and using the initial condition $v_x(0)=0$, we get the solution
+\begin{equation*}
+	v_x=v_{0x}\sin{(\omega_ct)}
+.
+\end{equation*}
+To obtain $v_{0x}$, we substitute our solution into \eqref{fir} and apply $v_y(0)=0$. Then $v_{0x}=\frac{E}{B}$. We end up with the following equations for the velocity:
+\begin{align*}
+	v_x&= \frac{E}{B}\sin{(\omega_c t)},\\
+	v_y&= \frac{E}{B}\left(\cos{(\omega_ct)}-1\right). 
+\end{align*}
+The charge is at rest $t=0$, and it's at rest again when $t$ is such that both $\sin{(\omega_c t)}$ and $\cos{(\omega_c t)}$ take the same values. This happens at 
+\begin{equation*}
+T=\frac{2\pi}{\omega_c}=\boxed{\frac{2\pi m}{qB}.}
+\end{equation*}
+(b) After integrating the equations for the velocity and applying the initial conditions $x(0)=0$ and $y(0)$ to fix the integration constants, we get
+\begin{align*}
+	x&= \frac{E}{B\omega_c}\left(1-\cos{(\omega_c t)}\right) ,\\
+	y&= \frac{E}{B\omega_c}\sin{(\omega_ct)}-\frac{E}{B}t. 
+\end{align*}
+Using $t=T$, we find that $x$ has stayed the same as at $t=0$, while $y=-\frac{E}{B}T$. The distance $L$ we seek is the absolute value of this shift, so
+\begin{equation*}
+	\boxed{L=\frac{2\pi mE}{qB^2}.}
+\end{equation*}
+(c) The square of the velocity at time $t$ is 
+\begin{equation*}
+	v^2=v_x^2+v_y^2=2\left(\frac{E}{B}\right)^2(1-\cos{(\omega_ct)})
+.
+\end{equation*}
+This is maximised when $\cos{(\omega_ct)}=-1$, meaning $\omega_c t = \pi+2k\pi$ for integer $k$. We conclude
+\begin{equation*}
+\boxed{v_\mathrm{max}=\frac{2E}{B}.}
+\end{equation*}
+(d) We see that $y$ will drift to $-\infty$, but $x$ is always confined between $0$ and $\frac{2E}{B\omega_c}$. The trajectory's width is therefore
+\begin{equation*}
+	\boxed{H=\frac{2mE}{qB^2}.}
+\end{equation*}
+(e) Along $y$ there's \fbox{uniform motion} with velocity $\mathbf{v_d}=-\frac{E}{B} \hat{\mathbf{y}}$. Additionally, there's \fbox{rotation} with an angular frequency $\omega_c=\frac{qB}{m}$ along a circle of radius $\frac{E}{B\omega_c}=\frac{mE}{qB^2}$. The centre of rotation is a point with coordinates ($\frac{mE}{qB^2}$, $-\frac{E}{B}t$).\\
+
+(f) Referring to the equations for the velocity, we note that at the instant of maximum velocity we have $v_x=0$ and $v_y=-\frac{2E}{B}$. The equations of motion then imply $F_x=-qE$, $F_y=0$. The radius of curvature can now be found from $|F_x|=\frac{mv_\mathrm{max}^2}{r_\mathrm{curv}}$. Thus
+\begin{equation*}
+	\boxed{r_\mathrm{curv}=\frac{4mE}{qB^2}.}
+\end{equation*}
+
+
+\end{solution}
+\fi
+\ifprob 
+	\clearpage
+\else 
+	\vspace*{5mm}
+\fi
+\end{document}
+

@@ -1,0 +1,136 @@
+\ProvidesPackage{defaults}
+
+%%%%%%%%%%%%%%%%%%%% PACKAGES
+
+%% Input
+\usepackage[utf8]{inputenc}
+\usepackage{babel}
+
+%% Colour
+\usepackage[usenames,dvipsnames]{xcolor}
+
+%% Units and maths
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{siunitx}
+% \usepackage{tensor}
+
+%% Code
+\usepackage{listings}
+
+%% Page margins
+\usepackage{geometry}
+
+%% Header/Footer
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage[hang, bottom]{footmisc}
+
+%% Sectioning 
+% \usepackage{sectsty}
+% \usepackage{titling}
+% \usepackage{imakeidx}
+% \usepackage{tocloft}
+
+%% Graphics and figures
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{framed}
+
+%% Tables
+\usepackage{array}
+\usepackage{booktabs}
+
+%% Lists
+\usepackage[shortlabels]{enumitem}
+
+%% References
+\usepackage{hyperref}
+\usepackage{url}
+
+%%%%%%%%%%%%%%%%%%%% PACKAGE SETUP
+
+%% Units and maths | Setup
+\sisetup{input-digits = 0123456789\pi}
+\sisetup{separate-uncertainty=true}
+\DeclareSIUnit\angstrom{\text {Å}}
+
+%% Code | Setup
+% \lstset{
+% 	breaklines=true,
+% 	postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}},
+% 	numbers=left,
+% 	numbersep=5pt,
+% 	numberstyle=\tiny\color{gray},
+% 	basicstyle=\footnotesize\ttfamily
+% }
+
+%% Page margins | Setup
+\newgeometry{left=2cm, right=2cm, top=1.5cm, bottom=2cm}
+\setlength{\parindent}{0pt}
+
+%% Header/Footer | Setup
+% \pagenumbering{gobble} % to remove page numbering
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyfoot[L]{\href{https://si335.github.io}{Stefan Ivanov}}
+\fancyfoot[C]{}
+\fancyfoot[R]{Page \thepage ~of \pageref{LastPage}}
+\renewcommand{\footnotemargin}{1em}
+
+%% Sectioning | Setup
+% \allsectionsfont{\normalfont\sffamily\bfseries}
+
+%% Tables | Setup
+% Fixed column width for tables
+\newcolumntype{L}[1]{>{\raggedright\let\newline\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\arraybackslash\hspace{0pt}}m{#1}}
+
+%% Lists | Setup
+% \setlist{leftmargin=7ex, itemsep=1pt, topsep=6pt, label=(\alph*)} % global list setup
+\newlist{subpart}{enumerate}{1} % define new list of depth 1
+\setlist[subpart,1]{leftmargin=7ex, itemsep=1pt, topsep=6pt, label=(\alph*)} % configure level 1 settings
+
+%% References | Setup
+% Link colour, optional
+\hypersetup{
+	colorlinks = true,
+	urlcolor = blue,
+	linkcolor = black
+}
+
+%%%%%%%%%%%%%%%%%%%% DEFINITIONS
+
+%% Math operators
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\let\det\relax           
+\DeclareMathOperator{\det}{det} 
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\sinc}{sinc}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\erf}{erf}
+
+%% Improve existing commands
+\newcommand{\mytilde}{{\,\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}\,}}
+\let\oldemptyset\emptyset         % save bad looking empty set
+\let\emptyset\varnothing          % good looking empty set
+
+%% Generic theorem environments
+\theoremstyle{definition}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{example}{Example}
+\newtheorem*{corollary}{Corollary}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{definition}{Definition}
+\newtheorem*{remark}{Note}
+\newtheorem*{prop}{Prop}
+\newtheorem*{proofsketch}{Proof Sketch}
+\renewenvironment{proof}{\noindent {\bfseries Proof.}\,}{\medskip}

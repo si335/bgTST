@@ -1,0 +1,76 @@
+\documentclass[../TST.tex]{subfiles}
+\begin{document}
+\begin{large}
+	\textbf{Short Exam 1}
+\end{large}
+
+\begin{sproblem}
+The planets E and M are in circular orbits around the star S. Their orbital radii are respectively $r_E=\qty{150e6}{km}$ and $r_M=\qty{230e6}{km}$. The rotational period of planet E around the star S is $T_E=\qty{365}{d}$.
+\begin{subpart}
+	\item Find the rotational period $T_M$ of planet M around the star S, in days.
+\end{subpart}
+The inhabitants of planet E wish to get to planet M. The spaceship is to travel with the engines turned off on an orbit tangent to both the orbits of planet E and planet M. The gravitational forces between the spaceship and the planets can be neglected.
+\begin{subpart}[resume]
+	\item Find the duration $T_{EM}$ of the flight from planet E to planet M, in days.  
+	\item Find the angle $\angle ESM$ at the instant when the spaceship takes off from planet E.
+	\item Find the time $T_2$ after which the angle between the planets (i.e. their relative position) is again suitable for launching an identical spaceship from planet E to planet M.
+	\item Find the velocity $v$ of the spaceship at launch with respect to the star (in $\unit{km/s}$).
+\end{subpart}
+\end{sproblem}
+
+\ifprob \else
+	\begin{solution} (a) By Kepler's third law, 
+\begin{equation*}
+	\frac{r_E^3}{T_E^2}=\frac{r_M^3}{T_M^2} \quad\Rightarrow\quad \boxed{T_M=T_E \left(\frac{r_M}{r_E}\right)^{3/2}=\qty{693}{d}.}
+\end{equation*}
+(b) On this elliptical orbit, the minimum distance to the Sun is $r_E$, while the maximum distance is $r_M$. Then, the semi-major axis is $a=\frac{r_E+r_M}{2}$, and the orbital period $T$ can be found from 
+\begin{equation*}
+\frac{a^3}{T^2}=\frac{r_E^3}{T_E^2}
+.
+\end{equation*}
+The flight corresponds to half of the ellipse and takes time $\frac{1}{2}T$, so
+\begin{equation*}
+	\boxed{T_{EM}=\frac{1}{2}T_E \left(\frac{r_E+r_M}{2r_E}\right)^{3/2}=\qty{260}{d}.}
+\end{equation*}
+(c) The spaceship's destination is a point $M'$ for which $\angle ESM'=\ang{180}$. The spaceship should be launched in such a way that planet M arrives at $M'$ exactly at the end of the flight. At the launch of the spaceship M should have an angle of $\frac{T_{EM}}{T_M}\cdot \ang{360}=\ang{135}$ to cover before reaching $M'$. In conclusion,
+\begin{equation*}
+	\angle ESM= \ang{180}-\frac{T_{EM}}{T_M}\cdot \ang{360}=\boxed{\ang{180}\left(1-\left(\frac{r_E+r_M}{2r_M}\right)^{3/2} \right) = \ang{45}.}
+\end{equation*}
+(d) The relative position of the planets is the same when the segment SE rotates by $\ang{360}$ with respect to the segment SM. The former's angular velocity (in degrees per unit time) is $\frac{\ang{360}}{T_E}$, while the latter's angular velocity is $\frac{\ang{360}}{T_M}$. The relative angular velocity is simply their difference. Then, $T_2$ satisfies
+\begin{equation*}
+	\left(\frac{\ang{360}}{T_E}-\frac{\ang{360}}{T_M}\right) T_2=\ang{360}
+.
+\end{equation*}
+It follows that
+\begin{equation*}
+	T_2=\frac{T_MT_E}{T_M-T_E}=\boxed{T_E \left(\frac{r_M^{3/2}}{r_M^{3/2}-r_E^{3/2}}\right)= \qty{771}{d}.}
+\end{equation*}
+(e) Let the velocity of the spaceship at $M'$ be $v'$. If the star's mass is $m$, the conservation of energy statement for points $E$ and $M'$ is 
+\begin{equation*}
+\frac{v^2}{2}-\frac{Gm}{r_E}=\frac{v'^2}{2}-\frac{Gm}{r_M}
+.
+\end{equation*}
+Additionally, we have conservation of angular momentum:
+\begin{equation*}
+vr_E=v'r_M
+.
+\end{equation*}
+Solving the system of equations, we find
+\begin{equation*}
+	v=\sqrt{\frac{2Gm}{r_E+r_M}\frac{r_M}{r_E}}
+.
+\end{equation*}
+Kepler's third law gives us $\frac{r_E^3}{T_E^2}=\frac{Gm}{4\pi^2}$, and then
+\begin{equation*}
+	\boxed{v=\frac{2\pi r_E}{T_E}\sqrt{\frac{2r_M}{r_E+r_M}}=\qty{33}{km/s}.}
+\end{equation*}
+
+\end{solution}
+\fi
+\ifprob 
+	\clearpage
+\else 
+	\clearpage
+\fi
+\end{document}
+

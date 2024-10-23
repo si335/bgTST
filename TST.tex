@@ -1,0 +1,81 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{defaults}
+\usepackage{subfiles}
+
+\makeatletter % This needs to be outside .sty
+\newtheoremstyle{mystyle}
+{\topsep}               % space above
+{\topsep}               % space below
+{}                      % bodyfont
+{}                      % indent
+{\bfseries}             % headfont
+{}                      % punctuation
+{0.6em}                 % space after head
+{\thmname{#1}\thmnumber{ #2}{\bfseries .}\thmnote{ #3\bfseries .}}  
+\theoremstyle{mystyle}
+
+\newtheorem{pproblem}{Problem} % Short problem
+\makeatother
+\newtheorem*{sproblem}{Problem} % Long problem
+\newtheorem{eproblem}{Problem} % Experimental problem
+\newtheorem*{solution}{Solution} % Any solution
+
+\newcommand{\score}[1]{\hfill \textbf{(#1\,pt)}}
+
+\newtoks\yr % Year switch
+\yr{2008} % Select TST paper here and comment out the missing problems
+
+\newif\ifprob % Solutions switch
+\probtrue % Only problems by default
+\probfalse % Include this to enable solutions
+% \setcounter{pproblem}{3} % Change problem numbering when necessary
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%
+
+\begin{Large}
+	\ifprob
+		\underline{\textbf{\the\yr\ Bulgarian IPhO Team Selection Test}}
+	\else
+		\underline{\textbf{\the\yr\ Bulgarian IPhO Team Selection Test -- Solutions}}
+	\fi
+\end{Large}
+
+\vspace*{1cm}
+
+%% Add short exams
+\subfile{\the\yr/s1}
+% \subfile{\the\yr/s2}
+% \subfile{\the\yr/s3}
+
+\begin{large}
+	\textbf{Theoretical Exam}
+\end{large}
+
+%% Add theoretical exam
+\subfile{\the\yr/l1}
+\subfile{\the\yr/l2}
+\subfile{\the\yr/l3}
+% \subfile{\the\yr/l4}
+% \subfile{\the\yr/l5}
+% \subfile{\the\yr/l6}
+% \subfile{\the\yr/l7}
+% \subfile{\the\yr/l8}
+% \subfile{\the\yr/l9}
+% \subfile{\the\yr/l10}
+
+\clearpage
+\begin{large}
+	\textbf{Experimental Exam}
+\end{large}
+
+%% Add experimental exam
+\subfile{\the\yr/e1}
+% \subfile{\the\yr/e2}
+
+%% Add constants
+\subfile{\the\yr/constants}
+
+\end{document}
+

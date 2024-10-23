@@ -1,0 +1,35 @@
+\documentclass[../TST.tex]{subfiles}
+\begin{document}
+\begin{pproblem}[Charged disc in a magnetic field]
+A uniform dielectric disc of mass $m$ and charge $q$ is initially at rest. The disc is placed in a magnetic field parallel to its axis. The field is arbitrary, $B=B(t)$, with $B(0)=0$. Find the time dependence of the angular velocity of the disc $\omega(t)$.
+\end{pproblem}
+
+\ifprob \else
+\begin{solution} Denote the radius of the disc by $R$ and its charge density by $\sigma=\frac{q}{\pi R^2}$. In keeping with the symmetry of the problem, consider a circular loop of radius $r<R$. This loop is pierced by a magnetic flux $\Phi=B\pi r^2$. The magnetic field is always changing, so by Faraday's law we have an electric field $E$ along the loop:
+	\begin{equation*}
+	E(r)\cdot 2\pi r = - \frac{\mathrm{d}\Phi}{\mathrm{d}t} = -\frac{\mathrm{d}B}{\mathrm{d}t}\pi r^2
+	.
+	\end{equation*}
+A surface element at $r$ which carries a charge $\mathrm{d}q$ will then feel a force $E\,\mathrm{d}q$, which creates a torque $E r\,\mathrm{d}q$ about the rotation axis. The net torque from the ring between $r$ and $r+\mathrm{d}r$ is 
+\begin{equation*}
+\mathrm{d}M=Er( 2\pi r\sigma\,\mathrm{d}r)= -\frac{\mathrm{d}B}{\mathrm{d}t}\left(\frac{\pi r^2}{2\pi r}\right)r\,(2\pi r\sigma\,\mathrm{d}r).
+\end{equation*}
+The total torque from the whole disc is
+\begin{equation*}
+M = \int \mathrm{d}M = -\frac{\mathrm{d}B}{\mathrm{d}t}\sigma \left(\frac{\pi R^4}{4}\right) = -\frac{\mathrm{d}B}{\mathrm{d}t}\left(\frac{qR^2}{4}\right) 
+.
+\end{equation*}
+This is equal to $I \frac{\mathrm{d}\omega}{\mathrm{d}t}$, where $I=\frac{1}{2}mR^2$ is the moment of inertia of the disc. The radius cancels out, and we're left with
+\begin{equation*}
+\mathrm{d}\omega = -\mathrm{d}B \frac{q}{2m}
+.
+\end{equation*}
+The initial angular velocity and the initial magnetic field are both zero, so the final answer is 
+\begin{equation*}
+\boxed{\omega(t) = -\frac{qB(t)}{2m} .}
+\end{equation*}
+The minus sign implies that the angular velocity is directed opposite to the magnetic field.
+\end{solution}
+\fi
+
+\end{document}

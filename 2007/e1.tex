@@ -1,0 +1,30 @@
+\documentclass[../TST.tex]{subfiles}
+\begin{document}
+\begin{eproblem}[The speed of sound in air]{\ \\[5pt]}
+\textit{Equipment:}\\
+Tone generator, two loudspeakers, microphone with a jack (female XLR connector), rectifier, resistance, two-channel oscilloscope, wire connectors, wires, screwdriver, self-retracting tape measure, tape, graph paper.
+\begin{subpart}
+	\item Connect the setup to the microphone jack. The jack has three pins called base ($-$), middle ($+$), and top (signal). The middle and top pins are shorted. Carefully examine the jack. Using the wire connectors and the wires, connect the jack and the resistance in series with the rectifier. Also connect the oscilloscope to the microphone so as to measure the voltage across it. Sketch the circuit. Supply a voltage of $\qty{3}{V}$ to the microphone and test it. \score{1.5}
+\end{subpart}
+\textbf{Note:} To avoid damaging the microphone when turning it on, follow these instructions:
+\begin{itemize}[nosep]
+	\item[-] Before connecting the microphone to the rectifier, set the voltage to zero using the potentiometers.
+	\item[-] First, turn on the rectifier.
+	\item[-] Then connect the wires to the rectifier's terminals, being mindful of the polarity.
+	\item[-] \textbf{Slowly} increase the voltage to $\qty{3}{V}$.\\[-5pt]
+\end{itemize}
+\textbf{Note:} To avoid damaging the microphone when turning it off, do not turn off the rectifier while the microphone is connected. First turn down the voltage to zero, detach the wires and only then turn off the rectifier.
+\begin{subpart}[resume]
+	\item Connect the two loudspeakers to the tone generator. Put the microphone very close to one of the loudspeakers. Vary the frequency of the tone generator in the range \hbox{[$\qty{2}{kHz}$, $\qty{20}{kHz}$]}. Write down the frequency at which the voltage across the microphone is largest. Work with this frequency from now on. \score{1}
+\end{subpart}
+Design a setup for observing two-source interference. The distance $d$ between the loudspeakers should be around $\qty{30}{cm}$ to $\qty{50}{cm}$. The distance $L$ between the line through the loudspeakers and the line along which you will move the microphone should be around $\qty{1}{m}$. Put the loudspeakers and the microphone on separate tables. Remove all objects that could reflect the sound waves. Be mindful of where you stand during the measurements.
+\begin{subpart}[resume]
+	\item Move the microphone around and measure the coordinates $x_k$ of at least 6 consecutive minima around the central maximum. Use a voltage low enough so that the loudspeakers emit monochromatic waves (without any harmonics). Write down the value of this voltage. Write down the values of $x_k$ in a table. Use those to find an accurate value for the coordinate of the central maximum $x_0$. \score{3}
+	\item Derive an exact formula for the optical path difference $\Delta$ of the interfering sound waves. Express $\Delta$ in terms of $L$, $d$, $x$, and $x_0$. \score{1}
+	\item Plot a graph of the optical path difference $\Delta$ for the measured minima against some number that corresponds to the physical condition for observing such minima. \score{1}
+	\item Find the wavelength of the sound waves $\lambda$. \score{1}
+	\item Calculate the speed of sound in air $c$ for your experimental setup. \score{0.5}
+	\item Estimate the error in your value for $c$. \score{1}
+\end{subpart}
+\end{eproblem}
+\end{document}

@@ -1,0 +1,34 @@
+\documentclass[../TST.tex]{subfiles}
+\begin{document}
+\begin{pproblem}
+An incompressible fluid of viscosity $\eta$ flows along a cylindrical pipe of length $L$ and radius $R$. The pressures at the two ends of the pipe are $p_1$ and $p_2$, respectively. The flow is stationary.
+\begin{subpart}
+\item Find the flow velocity $v(r)$ in terms of the distance from the axis of the pipe $r$.
+\item Find the volumetric flow rate through the pipe $Q$. 
+\end{subpart}
+\end{pproblem}
+
+\ifprob \else
+\begin{solution}
+ (a) The problem is symmetric with respect to $\theta$ and $z$, and the velocity $v$ depends only on $r$. In other words, the velocity gradient is along $r$ only. The equation for the viscous force acting on a piece of fluid is then greatly simplified. Choose a cylindrical piece of fluid that extends from the axis to some distance $r$. Its area of contact with the outside fluid is $A=2\pi r L$. The outside fluid then acts on our piece with a force $F_\mathrm{d}=\eta(2\pi rL)\frac{\mathrm{d}v}{\mathrm{d}r}$. Our piece is also pushed forwards by a force $F_\mathrm{p}=(p_1-p_2)\pi r^2$ due to the pressure difference at the two ends. The flow is stationary, so the two forces must balance. This yields
+\begin{equation*}
+-\frac{(p_1-p_2)}{2\eta L}r \mathrm{d}r = \mathrm{d}v 
+.
+\end{equation*}
+This holds throughout $r\in[0, R]$. Using that $v=0$ at the pipe's boundary, integrate it as follows:
+\begin{equation*}
+-\frac{(p_1-p_2)}{2\eta L}\int_r^R r \mathrm{d}r = \int_v^0 \mathrm{d}v 
+,
+\end{equation*}
+\begin{equation*}
+	\boxed{v(r)=\frac{(p_1-p_2)}{4L\eta}(R^2-r^2)}\, .\\[2ex]
+\end{equation*}
+(b) The total volumetric flow rate can be found by integrating the flow rates for all cylindrical rings between $r=0$ and $r=R$.
+\begin{equation*}
+	Q=\int v \mathrm{d}S = \int_0^R 2\pi r v(r)\mathrm{d}r = \frac{\pi(p_1-p_2)}{2\eta L}\int_0^R(rR^2-r^3)\mathrm{d}r= \boxed{\frac{\pi R^4 (p_1-p_2)}{8\eta L}}\,
+.
+\end{equation*}
+This dependence is known as Poiseuille's law.\\
+\end{solution}
+\fi
+\end{document}

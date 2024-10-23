@@ -1,0 +1,73 @@
+\documentclass[../TST.tex]{subfiles}
+\begin{document}
+\begin{large}
+	\textbf{Short Exam 2}
+\end{large}
+
+\begin{sproblem}
+A circuit consists of a battery of EMF $E$, a capacitor $C$, a resistor $R$, and an open switch, all in series. At time $t=0$ the switch is closed.
+\begin{subpart}
+	\item Find the magnitude $I_1(0)$ of the initial current, the time dependence of the current $I_1(t)$, and the total heat $Q_1$ dissipated at the resistor until the capacitor is fully charged. \hphantom{..............} \hfill \score{2.0}
+\end{subpart}
+The capacitor is discharged and the resistor is replaced by a nonlinear element with an I-V curve $I=\beta U^{3/2}$, where $\beta$ is a constant. At time $t=0$ the switch is closed.
+\begin{subpart}[resume]
+	\item Find the magnitude $I_2(0)$ of the initial current, the time dependence of the current $I_2(t)$, and the total heat $Q_2$ dissipated at the nonlinear element until the capacitor is fully charged. \score{3.0}
+\end{subpart}
+\end{sproblem}
+
+\ifprob \else
+\begin{solution} 
+(a) Initially the charge $q$ on the capacitor is zero, likewise for its voltage. The voltage loop rule for the circuit is
+\begin{equation*}
+E-\frac{q}{C}-IR=0
+.
+\end{equation*}
+Initially we just have $E-I_1(0)R=0$, or \fbox{$I_1(0)=\frac{E}{R}$.} In general, $I=\frac{\mathrm{d}q}{\mathrm{d}t}$, so
+\begin{equation*}
+\frac{\mathrm{d}q}{\mathrm{d}t}+\left( \frac{1}{RC}\right)q=\frac{E}{R}
+.
+\end{equation*}
+The general solution is $q(t)=Ae^{-\frac{t}{RC}}+CE$, where $A$ is an arbitrary constant. Using the initial condition $q(0)=0$, we obtain
+\begin{equation*}
+	q(t)=CE\left(1-e^{-\frac{t}{RC}}\right) \quad\Rightarrow\quad \boxed{I(t)=\left(\frac{E}{R}\right) e^{-\frac{t}{RC}}.}
+\end{equation*}
+We can now find the dissipated heat $Q_1$ by integrating $\int_0^\infty I^2R\,\mathrm{d}t$, but the algebra can be avoided. The point is that $Q_1$ is equal to the total energy input from the battery, minus the energy stored in the capacitor in the final state (when its charge is $q_0=CE$). Then,
+\begin{equation*}
+	Q_1=q_0E-\frac{q_0^2}{2C}=\boxed{\frac{CE^2}{2}.}
+\end{equation*}
+(b) Let the voltage on the nonlinear element be $U_N$, so that the current in the circuit is $I=\beta U_N^{3/2}$. As in the previous part, initially $q/C=0$, so $U_N=E$, and therefore  \fbox{$I_2(0)=\beta E^{3/2}$.} The general voltage loop rule is
+\begin{equation*}
+E-\frac{q}{C}-U_N=0
+.
+\end{equation*}
+We want to involve the current $I$, so we differentiate this equation to get
+\begin{equation*}
+-\frac{I}{C}-\frac{\mathrm{d}U_N}{\mathrm{d}t}=0
+.
+\end{equation*}
+Now $U_N=(I/\beta)^{2/3}$, hence
+\begin{equation*}
+	\frac{\mathrm{d}I}{\mathrm{d}t}=-\left(\frac{3\beta^{2/3}}{2C}\right) I^{4/3}
+.
+\end{equation*}
+After integrating, we are left with 
+\begin{equation*}
+	I(t)=\left(B+\frac{\beta^{2/3}}{2C}t\right)^{-3}
+,
+\end{equation*}
+where $B$ is a constant. After imposing the initial condition for the current,
+\begin{equation*}
+	\boxed{I(t)=\beta \left(\frac{1}{\sqrt{E}}+ \frac{\beta t}{2C}\right)^{-3}.}
+\end{equation*}
+The dissipated heat can now be found by integrating $\int_0^\infty U_NI\,\mathrm{d}t$, but we can save ourselves the work by using the same trick as before. The answer is, again, \fbox{$Q_2=\frac{CE^2}{2}$.}
+\end{solution}
+
+\fi
+\ifprob 
+	\clearpage
+\else 
+	\vspace*{10mm}
+	% \clearpage
+\fi
+\end{document}
+

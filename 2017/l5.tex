@@ -1,0 +1,35 @@
+\documentclass[../TST.tex]{subfiles}
+\begin{document}
+\begin{pproblem}
+The distance between a light source and a screen is $L$. There are two positions where a lens can be put between the source and the screen so that a clear image of the source is projected on the screen. The ratio of these images' sizes is $k$ ($k>1$). Find a formula for the focal length of the lens $F$ in terms of $L$ and $k$. Calculate $F$ for $L=\qty{180}{cm}$ and $k=4$.
+\end{pproblem}
+
+\ifprob \else
+\begin{solution} In this problem there is a real image on the screen, meaning that we don't need to consider the case of a lens placed behind the source. Denote the distance between the source and the lens by $x$. The distance from the lens to the screen is then $L-x$, and the thin lens formula gives us
+	\begin{equation*}
+\frac{1}{x}+\frac{1}{L-x}=\frac{1}{F}\quad\Rightarrow\quad x^2-Lx+LF=0.
+	\end{equation*}
+The solutions to this quadratic equation are as follows: 
+\begin{equation*}
+	x_{1,2}=\frac{L\pm\sqrt{L^2-4LF}}{2}
+.
+\end{equation*}
+These are valid provided that $L>4F$; else we can't have an image on the screen due to this lens. We also note that the two solutions sum to $L$, so they are like a pair of $x$ and $L-x$. After tracking the rays that pass through the centre of the lens, we see that in each case the magnification of the object is $M=\frac{L-x}{x}$. For the larger solution $x_1$, we have $M_1<1$, while for the other solution we have $M_2>1$. The sizes of the two images are then related by
+
+\begin{equation*}
+k=\frac{M_2}{M_1}=\frac{L-x_2}{x_2}\frac{x_1}{L-x_1}=\left(\frac{x_1}{x_2}\right)^2 
+.
+\end{equation*}
+Now our goal is to find $f$ from the equation
+\begin{equation*}
+	\sqrt{k}=\frac{L+\sqrt{L^2-4LF}}{L-\sqrt{L^2-4LF}}
+.
+\end{equation*}
+We reach $\sqrt{L^2-4LF}=\frac{\sqrt{k}-1}{\sqrt{k+1}}L$. We square this to get
+\begin{equation*}
+	\boxed{F=\frac{\sqrt{k}}{(\sqrt{k}+1)^2}L.}
+\end{equation*}
+This is less than $L/4$, as expected. For $L=\qty{180}{cm}$ and $k=4$ our formula yields \fbox{$F=\qty{20}{cm}$}.
+\end{solution}
+\fi
+\end{document}

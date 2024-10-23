@@ -1,0 +1,40 @@
+\documentclass[../TST.tex]{subfiles}
+\begin{document}
+\begin{pproblem}
+A satellite of mass $m$ moves  in a circular orbit of radius $r$ around a planet of mass $M$. Because of a drag force of the form $F_\mathrm{dr}=Av^n$, the orbital radius decreases at a constant rate
+\begin{equation*}
+	\frac{\mathrm{d}r}{\mathrm{d}t}=D\ll \frac{r}{T}
+,
+\end{equation*}
+where $T$ is the orbital period. The gravitational constant is $\gamma$.
+\begin{subpart}
+\item Find the number $n$.
+\item Determine $D=f(\gamma,M,m,A)$.
+\end{subpart}
+\end{pproblem}
+
+\ifprob \else
+\begin{solution}
+ Since gravity $F_\mathrm{g}=\frac{\gamma mM}{r^2}$ acts as a centripetal force of the form $F_\mathrm{c}=\frac{mv^2}{r}$, the orbital velocity must be $v=\sqrt{\frac{\gamma M}{r}}$. The mechanical energy of the satellite is then  
+\begin{equation*}
+E=\frac{mv^2}{2}-\frac{\gamma mM}{r}=-\frac{\gamma m M}{2r}
+.
+\end{equation*}
+Of course, this is in agreement with the general result for an elliptical orbit of semi-major axis $a$, which is $E=-\frac{\gamma m M}{2a}$. 
+The power of the drag force is 
+\begin{equation*}
+	P=\mathbf{F}\cdot \mathbf{v}=-Fv=-Av^{n+1}
+.
+\end{equation*}
+Nonconservative forces act to change the mechanical energy, meaning that $P=\frac{\mathrm{d}E}{\mathrm{d}t}$. Then
+\begin{equation*}
+	-Av^{n+1}=\frac{\gamma mM}{2r^2}\frac{\mathrm{d}r}{\mathrm{d}t}=\frac{\gamma m M}{2r^2}D
+.
+\end{equation*}
+The equation above must always hold, and $v^{n+1}\propto r^{-(n+1)/2}$, so \boxed{n=3.} Going back to that equation,
+\begin{equation*}
+	-A\gamma^2M^2 = \frac{\gamma m M}{2}D \quad\quad\Rightarrow\quad\quad \boxed{D=\frac{2\gamma MA}{m}}\,.\\[3ex]
+\end{equation*}
+\end{solution}
+\fi
+\end{document}

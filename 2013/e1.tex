@@ -1,0 +1,43 @@
+\documentclass[../TST.tex]{subfiles}
+\begin{document}
+\begin{eproblem}[Ruler vibrations]{\ \\[5pt]}
+\textit{Equipment:}\\
+Ruler (50 cm), another ruler (shorter), clamp, wooden block, 3 old coins (Bulgarian, issue 1992, one is 5 leva, the other two are 1 lev), stopwatch, tape measure, Scotch tape, scissors, graph paper.\\[5pt]
+\textit{Data:}
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+Mass of the ruler & $m_L$  & $\qty{51.0}{g}$  \\
+Thickness of the ruler & $h$  & $\qty{3.00}{mm}$  \\
+Mass of the 5 leva coin & $m_5$  & $\qty{6.00}{g}$  \\
+Mass of a 1 lev coin & $m_1$ & $\qty{4.00}{g}$\\
+\end{tabular}
+\end{center}
+You will need to complete five tasks.
+\begin{subpart}
+	\item Find the density of the plastic $\rho$ that the ruler is made from. The ruler's cross section can be approximated as a parallelogram. \score{1.5} 
+\end{subpart}
+Clamp one end of the ruler so that the clamped part is horizontal and the free part is $L_0=\qty{47.0}{cm}$ long. Load the ruler at its free end using different sets of coins, taking care that the centre of mass of the coins is exactly at the end of the ruler.  Measure the additional deflection of the ruler $s$ due to the coins. This deflection is given by
+\begin{equation*}
+s=\frac{4FL_0^3}{Ebh},
+\end{equation*}
+where $F$ is the force at the end of the ruler which causes the deflection, $L_0$ is the length of the ruler, $b$ is its width, $h$ is its length, and $E$ is the Young modulus of the plastic. This formula applies for a rectangular cross section, but it is accurate enough in the case of our ruler as well. 
+\begin{subpart}[resume]
+	\item Plot a graph of the deflection $s$ against the mass of the coins $m$. Using the graph, find the Young modulus of the plastic $E$. \score{3.0}
+\end{subpart}
+Study the dependence of the oscillation period $T$ of the free end of the ruler (without loading it with coins) on the free length $L$. This dependence is described by the formula
+\begin{equation*}
+	T=\frac{CL^2}{h}\sqrt{\frac{\rho}{E}},
+\end{equation*}
+where $L$ is the free length, $h$ is the thickness of the ruler, and $C$ is some unknown constant.
+\begin{subpart}[resume]
+	\item Plot a linearised graph in the appropriate variables. Using the graph, find $C$. Use the values of $\rho$ and $E$ from the previous parts of the problem. \score{4.5}
+\end{subpart}
+Clamp the ruler at one end so that it is vertical, with the part that sticks out being $L_0=\qty{47.0}{cm}$ long.  Attach different sets of coins at its free end, taking care that the centre of mass of the coins is exactly at the end of the ruler. 
+\begin{subpart}[resume]
+	\item Study the dependence of the oscillation period $T$ of the free end of the ruler on the total mass of the attached coins $m$. Plot your data in a way that will allow you to predict the period $T_{20}$ for $m=\qty{20}{g}$ by extrapolating. \score{4.0}
+	\item Find the critical mass $M$ at which the equilibrium of the vertical ruler becomes unstable and the ruler stops oscillating. \score{2.0}
+\end{subpart}
+Call the examiner in case of any technical difficulties.\\
+\end{eproblem}
+\vspace{3ex}
+\end{document}

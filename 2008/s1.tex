@@ -1,0 +1,49 @@
+\documentclass[../TST.tex]{subfiles}
+\begin{document}
+\begin{large}
+	\textbf{Short Exam 1}
+\end{large}
+\begin{sproblem}
+A solid ball of mass $m$ and radius $a$ (moment of inertia $I=\frac{2}{5}ma^2$) starts rolling without slipping from the top of another fixed ball of radius $b$. Its initial velocity is negligible. The acceleration due to gravity is $g$.
+\end{sproblem}
+
+\begin{subpart}
+	\item Find the angle $\theta=\theta_0$ at which the rolling ball will lose contact with the fixed ball. The angle $\theta$ is measured between the upward direction and the segment connecting the centres of the balls.
+	\item Find the velocity  of the centre of mass $v$ of the rolling ball when it detaches.
+	\item What coefficient of friction $k$ would make the upper ball start slipping at an angle $\theta=\alpha<\theta_0$?
+\end{subpart}
+
+\ifprob \else
+\begin{solution}
+ (a) Let us find the dependence of the centre of mass velocity $v$ on $\theta$. Our ball rolls without slipping, so the friction force at the point of contact with the other ball does not do any work. Applying conservation of energy,
+\begin{equation*}
+	\frac{mv^2}{2} + \frac{I\omega^2}{2} = mg(a+b)(1-\cos{\theta}),
+\end{equation*}
+and using $v=\omega a$ (no slipping), we find that $v^2=\frac{10}{7}g(a+b)(1-\cos{\theta})$. Now we can determine the normal force $N(\theta)$. There are three forces on the ball: gravity $mg$, friction $f$, and a normal force $N$. Projecting these along the normal, we find 
+\begin{equation*}
+	mg\cos{\theta}-N=ma_n,
+\end{equation*}
+where $a_n=v^2/(a+b)$ is the normal acceleration of the centre of mass. After substituting for $v^2$, we get $N=\left(\frac{17}{7}\cos{\theta}- \frac{10}{7}\right)mg$. The ball loses contact with the surface when $N=0$. Thus $\cos{\theta_0}=\frac{10}{17}$, or $\boxed{\theta_0\approx \ang{54}.}$\\
+
+(b) Plugging the value for $\theta$ back into the formula for $v(\theta)$, we get \fbox{$v=\sqrt{\frac{10}{17}g(a+b)}.$}\\
+
+(c) First, we need to find the friction force $f(\theta)$. Projecting forces along the tangent, we obtain
+\begin{equation*}
+	mg\sin{\theta}-f=ma_\tau
+,
+\end{equation*}
+where the tangential acceleration $a_\tau$ of the centre of mass is related to the angular acceleration of the ball $\varepsilon$ by $a_\tau=\varepsilon a$ (no slipping). Taking torques about the centre of mass, we get $fa=I\varepsilon$. Now, solving for $f$, we find $f(\theta)=\frac{2}{7}mg\sin{\theta}$.  For the ball to start slipping at $\theta=\alpha$, we need $f(\alpha)=kN(\alpha)$. Plugging in our formulae for $f$ and $N$, we get 
+\begin{equation*}
+	\boxed{k=\frac{2\sin{\alpha}}{17\cos{\alpha}-10}}\,.
+\end{equation*}
+You would be well advised to verify that all the results behave appropriately in special cases.
+\end{solution}
+\fi
+\ifprob
+	\clearpage
+	% \vspace*{1cm}
+\else
+	\clearpage
+\fi
+\end{document}
+

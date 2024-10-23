@@ -1,0 +1,44 @@
+\documentclass[../TST.tex]{subfiles}
+\begin{document}
+\begin{eproblem}[Conductivity of liquids]{\ \\[5pt]}
+\textit{Equipment:}\\
+Alternating voltage source, 2 multimeters, wires, paperclips of unknown radius $r$, tub, ruler, 3 bottles with $\qty{1.5}{l}$ of tap water in each, kitchen scale, table salt (NaCl), tape, scissors, aluminium foil (be careful with the sharp edges), funnel, graph paper. \\
+
+All inductances and capacitances in the circuits below are negligible. Record all measurements in tables. Write down your results in the answer sheet.\\
+
+\textit{Task 1. Conductivity of tap water.}\\
+Consider two identical infinite cylindrical conductors of radius $r$. The distance between the conductors is $L$. If the conductors pierce an infinite weakly conducting layer normally, some resistance $R$ will be measured between them. If the thickness of the layer is $h$ and its conductivity is $\sigma$, the resistance is given by
+\begin{equation}
+	R=\frac{C}{\sigma h}\ln{\left(\frac{L}{r}\right)}
+,
+\end{equation}
+where $C$ is an unknown constant. \\
+
+Pour the three bottles of water into the tub. Assemble a circuit that will allow you to measure the resistance between two vertical paperclips in a layer of water.  The multimeters should be connected in a way that allows you to measure small resistances. Use AC voltage of RMS value $U=\qty{4}{V}$ and frequency $\nu=\qty{2}{kHz}$.
+\begin{enumerate}
+	\item  Measure the resistance between the paperclips $R$ at different distances $L\in [\qty{1}{cm}, \qty{5}{cm}]$ in steps of $\qty{0.5}{cm}$. Keep the paperclips as far away as possible from the sides of the tub. Present your results in a table.\score{4.0}
+	\item  Stick a sheet of foil to each of the two smaller sides of the tub. Measure the resistance of the tap water between the sheets $R$. Find the conductivity of the tap water $\sigma$. Record the necessary length measurements in the answer sheet as well.  \score{2.0}
+	\item  Using Equation (1) and your value for the conductivity of tap water $\sigma$ from Task 1(b), plot your data from Task 1(a) in appropriate variables and find the radius of the paperclips $r$, as well as the constant $C$. \score{3.0}\\
+\end{enumerate}
+
+\textit{Task 2. Conductivity of salt salutions.}\\
+Add salt to the water and study four solutions of mass fractions $c=\qty{0.50}{\percent}$, $\qty{1.00}{\percent}$, $\qty{1.50}{\percent}$, $\qty{2.00}{\percent}$ one after the other. 
+
+\begin{enumerate}
+	\item Use the sheets of foil from Task 1(b) to measure the conductivity $\sigma$ of these solutions. Assume that it is given by
+	\begin{equation}
+	\sigma = \alpha c
+	.
+	\end{equation}
+	Plot a graph of the conductivity $\sigma$ against the mass fraction $c$ of the salt solutions. Using the graph, find the parameter $\alpha$. \score{4.0}
+	\item Equation (2) does not agree well with the experimental data. Instead assume a more general dependence of the form
+\begin{equation}
+\sigma = \beta c^n
+.
+\end{equation}
+Plot another graph in the appropriate variables and use it to find the number $n$.  \score{2.0} 
+\end{enumerate}
+
+Call the examiner if you suspect that a multimeter's fuse has blown, or in case of any other technical difficulties.
+\end{eproblem}
+\end{document}

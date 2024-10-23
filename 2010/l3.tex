@@ -1,0 +1,33 @@
+\documentclass[../TST.tex]{subfiles}
+\begin{document}
+\begin{pproblem}
+A neutron at rest decays into an electron, an electron antineutrino, and a proton at rest, $n\rightarrow p+ e^{-}+\tilde{\nu}_e$. The neutrino is assumed massless.
+\begin{subpart}
+	\item Find the momentum of the electron $p_e$ and calculate it.\score{2.0}
+	\item Find the velocity of the electron $v_e$ and calculate it. \score{1.0}
+\end{subpart}
+\end{pproblem}
+
+\ifprob \else
+	\begin{solution} (a) As with all other problems in special relativity, we will set $c=1$ and bring the $c$'s back at the end. The total energy before the decay is $m_n$, and the total momentum is zero. After the decay, we have a proton at rest, an electron with some momentum $\mathbf{p_e}$, and a neutrino whose momentum has to be $-\mathbf{p_e}$. The neutrino is massless, so its energy is simply $p_e$. Then, the total energy after the decay is $p_e+\sqrt{p_e^2+m_e^2}+m_p$. Going through the algebra,
+\begin{equation*}
+	p_e+\sqrt{p_e^2+m_e^2}=m_n-m_p-p_e,
+\end{equation*}
+\begin{equation*}
+	-2(m_n-m_p)p_e+(m_n-m_p)^2=m_e^2,
+\end{equation*}
+\begin{equation*}
+	p_e=\frac{(m_n-m_p)^2-m_e^2}{2(m_n-m_p)} \quad\Leftrightarrow\quad \boxed{\frac{(m_n-m_p)^2-m_e^2}{2(m_n-m_p)}c=\qty{0.54}{MeV/c} =\qty{2.9e-22}{kg.m/s}.}
+\end{equation*}
+We work with only two significant digits because that's how the electron mass was given.\\
+	
+(b) For the velocity, we will use $v_e=\frac{p_e}{E_e}=\frac{p_e}{\sqrt{p_e^2+m_e^2}}$. Then
+\begin{equation*}
+	v=\frac{(m_n-m_p)^2-m_e^2}{\sqrt{((m_n-m_p)^2-m_e^2)^2+4m_e^2(m_n-m_p)^2}}= \frac{(m_n-m_p)^2-m_e^2}{(m_n-m_p)^2+m_e^2},
+\end{equation*}
+\begin{equation*}
+	\boxed{v=\frac{(m_n-m_p)^2-m_e^2}{(m_n-m_p)^2+m_e^2}c=0.73c=\qty{2.2e8}{m/s}.}
+\end{equation*}
+\end{solution}
+\fi
+\end{document}

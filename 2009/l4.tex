@@ -1,0 +1,54 @@
+\documentclass[../TST.tex]{subfiles}
+\begin{document}
+\begin{pproblem}{\ }
+\begin{subpart}
+\item Find the electric field $E$ at a point $A$ on the axis of an ideal electric dipole $p$. The distance between point $A$ and the dipole is $r$.
+\item Find the force $F$ on another dipole of the same magnitude and orientation, located at point $A$.
+\item Find the energy of this system of dipoles $W$. 
+\item Find the torque $M$ acting on the dipole at point $A$ if we rotate it at an angle $\theta$ with respect to its initial orientation.\\
+\end{subpart}
+\end{pproblem}
+
+\ifprob \else
+\begin{solution} (a) Let's treat the dipole as a charge $-q$ at $z=0$ and a charge $+q$ at $z=d\ll r$ (indeed, that's what a dipole actually is). Point $A$ is at $z=\pm r$. Let's initially work in the case where $A$ is at $z=+r$. The total field at $A$ points along the $z$-axis and can be found as follows:
+	\begin{equation*}
+		\mathbf{E}=\left( \frac{kq}{(r-d)^2}-\frac{kq}{r^2}\right)\hat{\mathbf{z}}=\left(\frac{kq(r^2-(r-d)^2)}{r^2(r-d)^2}\right)\hat{\mathbf{z}}\approx 	\frac{2kqd}{r^3}\hat{\mathbf{z}}\Leftrightarrow \boxed{\frac{2kp}{r^3}\hat{\mathbf{z}}.}
+	\end{equation*}
+If $A$ were at $z=-r$, we would get exactly the same answer in terms of direction and magnitude. If we swapped the charges of the dipole, the direction of $\mathbf{E}$ at $z=-r$ would reverse. But now the field points radially outwards, because the configuration is now the same as in the first case. So the field is actually directed radially inwards, i.e.\ parallel to $+\hat{\mathbf{z}}$.\\
+
+(b) Again, let the charges of the dipole be $-q$ at $z=r$ and $+q$ at $z=r+d$, such that $p=qd$. The total force is then
+\begin{equation*}
+	\mathbf{F}=-q\mathbf{E}(r)+q\mathbf{E}(r+d)=q \hat{\mathbf{z}} \left(\frac{2kp}{(r+d)^3}-\frac{2kp}{r^3}\right)\approx q \hat{\mathbf{z}} \frac{2kp}{r^6} \left(r^3-(r^3+3r^2d)\right)=\boxed{-\frac{6kp^2}{r^4}\hat{\mathbf{z}}.}
+\end{equation*}
+If the second dipole were at $z=-r$, the force has the same magnitude, but it's directed along $+\hat{\mathbf{z}}$ this time, meaning the force is still attractive. The sign change is because now it's the positive charge that is closer to the first dipole. To check your work, recall that like dipoles attract and unlike dipoles repel.\\
+
+(c) We will derive a general formula for the energy of the system, valid even when the dipoles are not collinear. We'll need this for the final part of the problem. Let the field of the first dipole be $\mathbf{E}(\mathbf{r})$. The potential energy of the system is the work required to bring another dipole from infinity to its final position, where $+q$ is at some $\mathbf{r_+}$ and $-q$ is at some $\mathbf{r_-}$. This energy does not include the interaction between the charges in each pair, so there is no problem with treating the second dipole as two independent point charges. Thus
+\begin{equation*}
+W=-\left(\int_\infty^\mathbf{r_+}\mathbf{F_+}\cdot \mathrm{d}\mathbf{r}+\int_\infty^\mathbf{r_-}\mathbf{F_-}\cdot \mathrm{d}\mathbf{r}\right)=-q\left(\int_\infty^\mathbf{r_+}\mathbf{E}\cdot \mathrm{d}\mathbf{r}+\int_\infty^\mathbf{r_-}-\mathbf{E}\cdot \mathrm{d}\mathbf{r}\right),
+\end{equation*}
+Now we'll use the fact that the integral of $\mathbf{E}$ along a closed loop is zero (provided that there are no time-dependent magnetic fields, but we're in the clear). In particular,
+\begin{equation*}
+\int_\infty^\mathbf{r_+}\mathbf{E}\cdot \mathrm{d}\mathbf{r}+\int_\mathbf{r_+}^\mathbf{r_-}\mathbf{E}\cdot \mathrm{d}\mathbf{r}+\int_\mathbf{r_-}^\infty\mathbf{E}\cdot \mathrm{d}\mathbf{r}=0 \quad\Rightarrow\quad W=q\int_\mathbf{r_-}^\mathbf{r_+}\mathbf{E}\cdot \mathrm{d}\mathbf{r}
+.
+\end{equation*}
+And since the dipole is tiny, you can just write this as $W=-q\mathbf{E}\cdot \mathbf{d}$, where $\mathbf{d}$ is the vector connecting $-q$ to $+q$. But then $W=-\mathbf{p}\cdot \mathbf{E}$.
+In our particular problem the angle between $\mathbf{p}$ and $\mathbf{E}$ is zero, so 
+\begin{equation*}
+\boxed{W=-\frac{2kp^2}{r^3}.}
+\end{equation*}
+(d) In general, if the angle between $\mathbf{p}$ and $\mathbf{E}$ is $\theta$, the energy of the configuration is $W=-pE\cos{\theta}$. The favoured state is $\theta = 0$, and any deviation from this incurs an energy cost. It follows that there's an associated torque $M$ you need to overcome in order to rotate the dipole through $\mathrm{d}\theta$. This can be written as $\mathrm{d}W=M \mathrm{d}\mathrm{\theta}$. Hence
+\begin{equation*}
+	pE\sin{\theta}\mathrm{d}\theta=M\mathrm{d}\theta \quad\Rightarrow\quad M=pE\sin\theta=\boxed{\frac{2kp^2}{r^3}\sin{\theta}.}
+\end{equation*}
+Even if you are already familiar with the formulae
+\begin{equation*}
+	\mathbf{E}=\frac{k p}{ r^3}\left(2\cos{\theta \,\boldsymbol{\hat{r}}+\sin{\theta}\,\boldsymbol{\hat{\theta}}}\right),\quad\quad 
+	\mathbf{F}=\mathbf{p}\cdot \nabla \mathbf{E},\quad\quad
+	W=-\mathbf{p}\cdot \mathbf{E},\quad\quad
+	\mathbf{M}=\mathbf{p}\times\mathbf{E},
+\end{equation*}
+you're not supposed to just plug them in for this sort of problem. You will have to provide some working of your own for full marks.
+
+\end{solution}
+\fi
+\end{document}

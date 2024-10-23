@@ -1,0 +1,37 @@
+\documentclass[../TST.tex]{subfiles}
+\begin{document}
+\begin{pproblem}
+Two point masses, $m=\qty{1}{kg}$ each, lie on a smooth horizontal surface. The masses are connected by a stiff massless spring with relaxed length $d=\qty{1}{m}$ and spring constant $k=\qty{1}{N/m}$. Initially the spring is relaxed, one of the masses is at rest, and the other is given a horizontal velocity $v=\qty{1}{m/s}$ perpendicular to the spring. Find the maximum elongation of the spring $x$, accurate to $\qty{1}{mm}$.
+\end{pproblem}
+
+\ifprob \else
+	\begin{solution} The surface is frictionless, so there are no external horizontal forces. Thus, following the collision, the velocity of the centre of mass (CM) will remain constant. This velocity is equal to $\frac{mv}{m+m}=\frac{v}{2}$. Let's work in the reference frame in which the CM is at rest. This frame is inertial, and the initial velocities of the masses there are tangential, opposite, and equal to $\frac{v}{2}$ each. The spring will now start stretching, and the masses will also acquire some radial velocities $v_r$. \\[5pt]
+		The motion that ensues is subject to a few conservation laws. Firstly, conservation of momentum implies that the velocities of the masses are always directed opposite to each other. Next, the pull from the spring is radial, so the angular momentum with respect to the CM is conserved as well. If at some instant the tangential velocities are $v_\tau$ each, while the extension of the spring is $x'$, we have
+		\begin{equation*}
+		2mv_\tau \left(\frac{d+x'}{2}\right) = 2 m \left(\frac{v}{2}\right) \left(\frac{d}{2}\right) 
+		.
+		\end{equation*}
+Finally, the energy is also constant:
+\begin{equation*}
+2\left(\frac{m(v_r^2+v_\tau^2)}{2}\right) + \frac{kx'^2}{2} = 2 \left(\frac{m(v/2)^2}{2}\right) 
+.
+\end{equation*}
+When the spring is stretched the most, the balls have zero radial velocity, and the conservation laws take the form
+\begin{equation*}
+		v_\tau (d+x)= \frac{v}{2}d, \quad\quad v_\tau^2+\frac{kx^2}{2m}=\left(\frac{v}{2}\right)^2
+,
+\end{equation*}
+from which we conclude that $x$ obeys
+\begin{equation*}
+\frac{kx^2}{2m}=\left(\frac{v}{2}\right)^2\left(1-\left(\frac{d}{d+x}\right)^2 \right) 
+.
+\end{equation*}
+This cannot be solved analytically, and we're just looking for the numerical value of $x$, so we plug in all the numbers to reduce this to an equation for $x$ in metres:
+\begin{equation*}
+2x^2=1-\left(\frac{1}{1+x}\right)^2
+.
+\end{equation*}
+We should be accurate to $0.001$ in $x$, so there's a long road ahead of us. The only solution is $x=\qty{0.537}{m}$ (more precisely, $\qty{0.53697}{m}$). We state this in $\unit{mm}$: \fbox{$x=\qty{537}{mm}$}\,.
+\end{solution}
+\fi
+\end{document}

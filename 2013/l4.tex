@@ -1,0 +1,27 @@
+\documentclass[../TST.tex]{subfiles}
+\begin{document}
+\begin{pproblem}
+A layer of tap water is poured into a wide and shallow dielectric vessel. The thickness of the layer is $h=\qty{1.00}{cm}$. The probes of a multimeter are vertically submerged at a distance $l=\qty{20.0}{cm}$ from each other until they reach the bottom of the vessel. The multimeter measures a resistance of $R=\qty{500}{k\ohm}$. Assuming the probes are cylinders of radius $a=\qty{1.00}{mm}$ and modelling the water as a weakly conducting medium, find a formula for the resistivity of water $\rho$ and calculate its value.
+\end{pproblem}
+\ifprob \else
+\begin{solution} 
+	This problem is about current flow through a continuous medium, in this case an infinite plane of thickness $h$. To find an expression for the resistance $R$, we need to see how the potential difference between the probes $U$ depends on the current $I$ that flows into the plane at one of the probes and gets drawn out at the other.\\[5pt]
+	First, let us figure out what the current distribution actually looks like. If we only had $I$ flowing in and nothing was going on at the other probe, the answer would be that current flows out into the plane radially, the current density being $\mathbf{j}_1=\frac{I}{2\pi hr}\hat{\mathbf{r}}_1$. Likewise, if we were just drawing out $I$ at the second probe, the answer is the same distribution, but this time directed inwards at the second probe: $\mathbf{j}_2=-\frac{I}{2\pi hr}\hat{\mathbf{r}}_2$. Now, the key point is that the superposition $\mathbf{j}=\mathbf{j}_1+\mathbf{j}_2$ will satisfy all the boundary conditions imposed in the actual problem -- it corresponds to $I$ flowing in at probe 1, and also to $I$ being drawn out at probe 2, and there are no currents at infinity. This $\mathbf{j}$ adheres to the continuity equation (the counterpart of Kirchhoff's junction rule in the plane) because that equation is linear, and the two components $\mathbf{j}_1$ and $\mathbf{j}_2$ both comply with it. To sum up, $\mathbf{j}$ is a perfectly valid solution. We then exploit uniqueness to state that this is \textit{the} solution. \\[5pt]
+	When calculating the potential difference between the probes, we will work along the straight line that connects them. By Ohm's law, the electric field at a distance $r$ from probe 1 is
+	\begin{equation*}
+	\mathbf{E}=\frac{I\rho}{2\pi h}\left(\frac{1}{r}+\frac{1}{l-r}\right) \hat{\mathbf{r}}_1
+	.
+	\end{equation*}
+We integrate this expression between the surfaces of the two conducting cylinders, and this results in
+\begin{equation*}
+	U=\int_a^{l-a}\frac{I\rho}{2\pi h}\left(\frac{1}{r}+\frac{1}{l-r}\right) \mathrm{d}r \quad\Rightarrow\quad U=\frac{I\rho}{\pi h}\ln{\left(\frac{l-a}{a}\right) }
+.
+\end{equation*}
+The multimeter displays $R=U/I$, so 
+\begin{equation*}
+	\rho = \frac{R \pi h}{\ln{\left(\frac{l-a}{a}\right) }}\approx \boxed{\frac{\!R\pi h}{\ln\left(\frac{l}{a}\right)}=\qty{3000}{\ohm.m}.}
+\end{equation*}
+
+\end{solution} 
+\fi
+\end{document}

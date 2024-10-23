@@ -1,0 +1,50 @@
+\documentclass[../TST.tex]{subfiles}
+\begin{document}
+\begin{pproblem}
+Assume the Earth rotates around the Sun in a circular orbit of radius $r_0=\qty{1}{au}$ with velocity $v_0=\qty{30}{km/s}$ and period $T_0=\qty{1}{yr}$. Halley's comet has an orbital period of $T_1=\qty{76}{yr}$ and its closest approach to the Sun is at a distance $r_\mathrm{min}=\qty{0.59}{au}$.
+\begin{subpart}
+	\item Find the maximum distance between the comet and the Sun $r_\mathrm{max}$. \score{1.0}
+	\item Find the minimum and maximum velocities of the comet, $v_\mathrm{min}$ and $v_\mathrm{max}$.\score{2.0}
+\end{subpart}
+Your formulae should only include the data in the problem statement, and your numerical values should be in the same units.
+\end{pproblem}
+\ifprob \else
+\begin{solution} (a) We can find the semi-major axis $a$ of the comet's elliptical orbit from Kepler's third law,
+	\begin{equation*}
+		\frac{r_0^3}{T_0^2}=\frac{a^3}{T_1^2}=\frac{GM}{4\pi^2} \quad\Rightarrow\quad a=r_0\left(\frac{T_1}{T_0}\right)^{2/3}
+	.
+	\end{equation*}
+The minimum and maximum distances from the focus where the Sun is add up to the major axis, $r_\mathrm{min}+r_\mathrm{max}=2a$, yielding
+\begin{equation*}
+	\boxed{r_\mathrm{max}=2r_0\left(\frac{T_1}{T_0}\right)^{2/3}-r_\mathrm{min}=\qty{35.28}{au}.}
+\end{equation*}
+We can assume the Sun doesn't move at all (it does, but we need the comet's mass $m$ to account for this, and the resulting corrections are tiny anyway). The total energy of the system is then $\frac{mv^2}{2}-\frac{GMm}{r}$, and it is conserved. We see that smaller distances correspond to larger velocities, and we can write
+\begin{equation*}
+\frac{mv_\mathrm{min}^2}{2}-\frac{GMm}{r_\mathrm{max}}=\frac{mv_\mathrm{max}^2}{2}-\frac{GMm}{r_\mathrm{min}}
+.
+\end{equation*}
+The gravitational pull from the Sun is a central force, so the angular momentum of the comet about the Sun's position is conserved. In particular,
+\begin{equation*}
+mv_\mathrm{min}r_\mathrm{max}=mv_\mathrm{max}r_\mathrm{min}
+.
+\end{equation*}
+We solve this set of equations and find
+\begin{equation*}
+	v_\mathrm{max}=\sqrt{\frac{2GM(r_\mathrm{max}/r_\mathrm{min})}{r_\mathrm{max}+r_\mathrm{min}}}, \quad\quad v_\mathrm{min}=\sqrt{\frac{2GM(r_\mathrm{min}/r_\mathrm{max})}{r_\mathrm{max}+r_\mathrm{min}}}
+.
+\end{equation*}
+Now we need to express the velocities in the original variables. To this end, we use 
+\begin{equation*}
+	\frac{2GM}{r_\mathrm{min}+r_\mathrm{max}}=\frac{GM}{a}=\frac{4\pi^2 a^2}{T_1^2}=\left(\frac{2\pi r_0}{T_0}\left(\frac{T_0}{T_1}\right)^{1/3} \right)^2
+,
+\end{equation*}
+and we end up with
+\begin{equation*}
+	\boxed{v_\mathrm{max}=\frac{2\pi r_0}{T_0}\left(\frac{T_0}{T_1}\right)^{1/3}\left(2\left(\frac{r_0}{r_\mathrm{min}}\right)\left(\frac{T_1}{T_0}\right)^{2/3}-1 \right)^{1/2}=\qty{54.78}{km/s},}
+\end{equation*}
+\begin{equation*}
+	\boxed{v_\mathrm{min}=\frac{2\pi r_0}{T_0}\left(\frac{T_0}{T_1}\right)^{1/3}\left(2\left(\frac{r_0}{r_\mathrm{min}}\right)\left(\frac{T_1}{T_0}\right)^{2/3}-1 \right)^{-1/2}=\qty{0.92}{km/s}.}
+\end{equation*}
+\end{solution}
+\fi
+\end{document}

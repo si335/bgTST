@@ -1,0 +1,18 @@
+\documentclass[../TST.tex]{subfiles}
+\begin{document}
+\begin{pproblem}
+Two parallel beams of light are normally incident on a diffraction grating of period $d=\qty{8}{\micro m}$. Their wavelengths are $\lambda_1$ and $\lambda_2$, both in the range ($\qty{400}{nm}$ -- $\qty{760}{nm}$). We observe their diffraction patterns for all angles $\theta\in(\ang{-90},\ang{90})$. The patterns' maxima coincide at an angle $\theta_0$ with $\sin{\theta_0}=0.2725$. One of the patterns has 8 maxima more than the other. Find $\lambda_1$ and $\lambda_2$. How many possible solutions are there?
+\end{pproblem}
+
+\ifprob \else
+	\begin{solution} We will take $\lambda_2>\lambda_1$ without loss of generality. The angles of the maxima for light of wavelength $\lambda_i$ can be found from $d\sin{\theta}=k\lambda_i$, $k\in\mathbb{Z}$. For the maximum at $\theta_0$ we have $d\sin{\theta_0}=\qty{2180}{nm}=k_1\lambda_1=k_2\lambda_2$. The integers that result in wavelengths within the allowed range are $k=3,4,5$. They correspond to $\lambda = \qty{726.6}{nm},\,\qty{545}{nm},\,\qty{436}{nm}$.\\[5pt]
+	The number of maxima at each wavelength is $N=2n_i+1$, where $n_i$ is the largest integer for which the equation $d\sin{\theta}=n_i\lambda_i$ admits a solution for $\theta$. We'd need $n_i\lambda_i<d$ for that, so $n_i=\left\lfloor \frac{d}{\lambda_i}\right\rfloor$. The $2n_i+1$ here accounts for the central maximum and the maxima on both sides. We're told that $N_1-N_2=8$, which reduces to
+		\begin{equation*}
+		\left\lfloor \frac{d}{\lambda_1}\right\rfloor - \left\lfloor \frac{d}{\lambda_2}\right\rfloor =4
+		.
+		\end{equation*}
+		Substituting the available wavelengths $\lambda_i$, the terms on the left can be either 11, 14 or 18. The only pair that works is 18 and 14, and this corresponds to $\boxed{\lambda_1=\qty{436}{nm}}$ and $\boxed{\lambda_2=\qty{545}{nm}}$. This is the \fbox{only solution}.
+\end{solution}
+\fi
+
+\end{document}

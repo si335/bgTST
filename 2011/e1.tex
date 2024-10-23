@@ -1,0 +1,45 @@
+\documentclass[../TST.tex]{subfiles}
+\begin{document}
+\begin{eproblem}[Oscillations of a wooden block]{\ \\[5pt]}
+\textit{Equipment:}\\
+Stand with pinch (to be used as a pivot for a pendulum), wire, wooden block, pliers, stopwatch, ruler, blank paper, graph paper.\\[5pt]
+The longest side of the block is denoted by $a$, the middle length one by $b$, and the shortest one by $c$. The mass of the block $m$ is written down on the block itself. A hook with a screw thread can be inserted into holes on the surfaces of the block. This allows the block to oscillate about different axes. Denote the axes about which the block oscillates by [100] for the axis parallel to $a$, [010] for the axis parallel to $b$, and [001] for the axis parallel to $c$.\\[5pt]
+The aim of this problem is to calculate the acceleration due to gravity $g$ \textbf{(10 pt)} and the torsion coefficient of the wire $D$ \textbf{(5 pt)}. The two tasks are independent.\\
+
+In order to find $g$ you will need to study the period of rotational oscillations $T$ of the pendulum about a horizontal axis which is perpendicular to one of the block's surfaces. The period is given by the formula
+\begin{equation*}
+	T=2\pi\sqrt{\frac{I}{mgd \left(\frac{d}{l}+1 \right)}}
+,
+\end{equation*}
+where $l$ is the length of the wire, $d$ is the distance between the end of the wire and the centre of mass of the block, $m$ is the mass of the block, and $I$ is the moment of inertia of the block with respect to the axis of rotation. The moment of inertia is given by 
+\begin{equation*}
+I=\frac{1}{12}m(a_i^2+a_j^2)
+,
+\end{equation*}
+where $a_i$ and $a_j$ are the lengths of the edges perpendicular to the axis of rotation (i.e. $a$ and $b$, or $a$ and $c$, or $b$ and $c$).
+
+\begin{subpart}
+	\item Take enough useful measurements. Present them in a table and explain how they were obtained. \score{4.5}
+	\item State the variables which, when plotted, can easily give you $g$. \score{0.5}
+	\item Plot the relevant graph. \score{3.0}
+	\item Using the graph, determine the acceleration due to gravity $g$. \score{1.0}
+	\item Estimate your error in finding $g$. \score{1.0}\\
+\end{subpart}
+In order to determine the torsion coefficient of the wire $D$ you will need to study the period of rotational oscillations $T$ of the pendulum about an axis coinciding with the wire. Their period is given by
+\begin{equation*}
+	T=2\pi\sqrt{\frac{I}{D}}
+,
+\end{equation*}
+where $I$ is the moment of inertia about the axis of rotation (given above).
+\begin{subpart}[resume]
+	\item Take enough useful measurements. Present them in a table and explain how they were obtained. \score{2.25}
+	\item State the variables which, when plotted, can easily give you $D$. \score{0.25}
+	\item Plot the relevant graph. \score{1.75}
+	\item Using the graph, determine the coefficient of torsion of the wire $D$. \score{0.5}
+	\item Estimate your error in finding $D$. \score{0.25}
+\end{subpart}
+Call the examiner in case of any technical difficulties.\\
+
+\textbf{Note:} Do not write on the block! 
+\end{eproblem}
+\end{document}

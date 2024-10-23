@@ -1,0 +1,77 @@
+\documentclass[../TST.tex]{subfiles}
+\begin{document}
+\begin{large}
+	\textbf{Short Exam 1}
+\end{large}
+
+\begin{sproblem}
+A thin rod of mass $m$ and length $L$ is placed vertically on a horizontal surface. The acceleration due to gravity is $g$. The rod is given a tiny lateral push and it starts falling. There is no friction between the rod and the surface. Right before the rod strikes the surface horizontally, find:
+\begin{subpart}
+	\item The velocity of the centre of mass $V_C$.
+	\item The angular acceleration of the rod $\varepsilon$.
+	\item The normal force $R$.
+\end{subpart}
+\end{sproblem}
+
+\ifprob \else
+	\begin{solution} (a) The motion of an object can always be decomposed into translation of the centre of mass (CM) and rotation about the CM. In this problem, the CM doesn't move horizontally because the only external forces are the normal force $R$ and the gravity $mg$, both of which are vertical.\\[5pt]
+		Denote the CM velocity by $V$ and the angular velocity by $\omega$. We will work at an instant when the rod makes an angle $\theta$ with the horizon, and we'll take the special case $\theta=0$ when needed. Consider the contact point between the rod and the floor. Its vertical velocity is always zero, which can only happen when the rotation cancels the CM velocity, such that $V=\frac{\omega L}{2}\cos{\theta}$. Also, there are no frictional losses, so the total energy is conserved. We will compare the initial state when the CM is at $y=\frac{L}{2}$ and the current state, for which $y=\frac{L}{2}\sin{\theta}$:
+		\begin{equation*}
+			mg\frac{L}{2}=\frac{I\omega^2}{2}+\frac{mV^2}{2}+mg \frac{L}{2}\sin{\theta}	
+		.
+		\end{equation*}
+Here the moment of inertia of the rod is $\frac{1}{12}mL^2$. Substituting our expression for $\omega$, we find
+\begin{equation*}
+	\frac{1}{2}mV^2\left(1+\frac{1}{3\cos^2{\theta}}\right)=mg \frac{L}{2}(1-\sin{\theta}) \quad\Rightarrow\quad V=\sqrt{gL \left(\frac{1-\sin{\theta}}{1+\frac{1}{3\cos^2\theta}}\right)} .
+\end{equation*}
+When the rod is horizontal, we answer
+\begin{equation*}
+V_C=V(0)=\boxed{\sqrt{\frac{3}{4}gL}.}
+\end{equation*}
+
+(b)-(c) Consider the contact point at the instant when the rod is horizontal. In its motion \textit{about the centre of mass} it has some normal acceleration, which is horizontal, and some tangential acceleration, which is vertical. Because the vertical velocity of this point is always zero, the same can be said for its vertical acceleration. But that is precisely equal to the tangential acceleration minus the CM acceleration $a_\mathrm{CM}$. We conclude that 
+\begin{equation*}
+a_\mathrm{CM}= \frac{\varepsilon L}{2}
+.
+\end{equation*}
+Apart from that, we have the translational equation of mtion 
+\begin{equation*}
+ma_\mathrm{CM}=mg-R, 
+\end{equation*}
+Finally, only the normal force will generate a torque about the centre of mass, so we have
+\begin{equation*}
+R \frac{L}{2}= \frac{mL^2}{12}\varepsilon.
+\end{equation*}
+Solving this set of equations,
+\begin{equation*}
+	\boxed{R=\frac{mg}{4}}\,, \quad\quad \boxed{\varepsilon = \frac{3g}{2L}.}
+\end{equation*}
+If you don't have the relation $a_\mathrm{CM}=\frac{\varepsilon L}{2}$, the problem is still doable, at the cost of more algebra. Working in the general case, the angular velocity is
+\begin{equation*}
+	\omega = \frac{2}{L\cos{\theta}}V=2\sqrt{\frac{3g}{L}}\sqrt{\frac{1-\sin{\theta}}{1+3\cos^2{\theta}}}
+.
+\end{equation*}
+The acceleration of the CM will be
+\begin{equation*}
+a_\mathrm{CM}=\frac{\mathrm{d}V}{\mathrm{d}t}=
+\frac{1}{2}\sqrt{gL}\sqrt{\frac{1+\frac{1}{3\cos^2\theta}}{1-\sin{\theta}}}\cdot \frac{(-\cos{\theta})\left(1+\frac{1}{3\cos^2{\theta}}\right)-(1-\sin{\theta})\left(-\frac{2}{3}\frac{-\sin{\theta}}{\cos^3{\theta}}\right)  }{\left(1+\frac{1}{3\cos^2{\theta}}\right)^2} \frac{\mathrm{d}\theta}{\mathrm{d}t}
+.
+\end{equation*}
+By using that $\omega = -\frac{\mathrm{d}\theta}{\mathrm{d}t}$, this simplifies to
+\begin{equation*}
+a_\mathrm{CM}=\frac{(\cos{\theta})\left(1+\frac{1}{3\cos^2{\theta}}\right)+\frac{2}{3}\frac{(1-\sin{\theta})\sin{\theta}}{\cos^3{\theta}}  }{\left(1+\frac{1}{3\cos^2{\theta}}\right)^2} g
+.
+\end{equation*}
+When $\theta=0$, this corresponds to $a_\mathrm{CM}=\frac{3}{4}g$. From that point on, use 
+\begin{equation*}
+ma_\mathrm{CM}=mg-R \quad \mathrm{and} \quad R \frac{L}{2}= \frac{mL^2}{12}\varepsilon,
+\end{equation*}
+and you get the same final answers.
+\end{solution}
+\fi
+\ifprob 
+	\clearpage
+\else 
+\fi
+\end{document}
+

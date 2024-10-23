@@ -1,0 +1,54 @@
+\documentclass[../TST.tex]{subfiles}
+\begin{document}
+\begin{eproblem}[Seiche]{\ \\[5pt]}
+\textit{Equipment:}\\
+Rectangular box, $\qty{3}{l}$ of water, measuring vessel (in ml), stopwatch, ruler, graph paper.\\
+
+Consider a harmonic wave of wavelength $\lambda$ propagating along the surface of an infinite layer of liquid of depth $h$. Neglecting the viscosity and the surface tension of the liquid, and assuming a wave amplitude $A\ll h$, the propagation speed is given by
+\begin{equation}
+	v=\sqrt{\frac{g\lambda}{2\pi}\tanh{\left(\frac{2\pi h}{\lambda}\right)}}
+,
+\label{eq1}
+\end{equation}
+where $\tanh{x}=\frac{e^x-e^{-x}}{e^x+e^{-x}}$ and $g$ is the acceleration due to gravity. This formula yields approximations for the propagation speed $v$ in the cases of `shallow' and `deep' water, respectively:
+\begin{equation}
+	v_\mathrm{shallow}=\sqrt{gh}
+,
+\end{equation}
+\begin{equation}
+	v_\mathrm{deep}=\sqrt{\frac{g\lambda}{2\pi}}
+.
+\end{equation}
+
+\setlength{\parindent}{3ex}
+
+A seiche is a standing wave formed on the surface of an enclosed body of water. The surface of the water remains nearly flat, however the water level at the two ends of the vessel oscillates in antiphase with a period $T$. The seiche can be considered as a standing wave formed by the superposition of two harmonic travelling waves of equal amplitudes that propagate in opposite directions. 
+
+In shallow enough water, instead a seiche one could create a travelling nonlinear wave with a single peak, called a soliton. The velocity of this type of wave can also be assumed to obey  (\ref{eq1}).
+
+The aim of this problem is to study the period $T$ of a seiche and of a soliton for different values of the depth $h$, i.e. both for `shallow' water and `deep' water. 
+
+Before you start taking measurements, play around with the setup at different depths. Induce waves along both sides of the box and see when you can reliably measure the timescales. Hence decide on your experimental procedure and the ranges in which you will measure.
+\begin{subpart}
+	\item Induce a seiche or a soliton at different depths $h$ and measure the period of the wave $T$. Explain how you induce the waves. \score{0.5}\\[5pt]
+Present your results in a table. \score{3.5}
+	\item Write down the depths $h$ at which you can create a seiche and those at which you can create a soliton. \score{0.5}
+	\item Plot a graph of the period $T$ against the depth $h$.\score{3.0}
+	\item For what depths is the period $T$ constant (or nearly constant)? \score{0.5}
+	\item Assuming that in `deep' water the seiche has some effective wavelength $\lambda_\mathrm{eff}$, find the ratio $n=\frac{\lambda_\mathrm{eff}}{2L}$, where $L$ is the length of the box in the direction of propagation of the seiche. \score{0.5}
+	\item Assuming that in `shallow' water the wave velocity is given by 
+\begin{equation}
+v\propto h^k
+,
+\label{eq4}
+\end{equation}
+plot this dependence in appropriate coordinates so that $k$ can be determined from the graph. \score{3.0}\\[5pt]
+Also present the data in the graph in tabular form. \score{0.5}
+\item Calculate $k$.\score{1.0}
+\item Find the values of the ratio $h/L$ for which  (\ref{eq4}) holds.\score{1}
+\item Explain qualitatively why  (\ref{eq1}) also holds for a soliton.\score{0.5}
+\item At what depths does viscosity become significant for your experiment? \score{0.5}
+\end{subpart}
+Call the examiner in case of any technical difficulties. 
+\end{eproblem}
+\end{document}

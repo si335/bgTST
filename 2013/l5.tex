@@ -1,0 +1,30 @@
+\documentclass[../TST.tex]{subfiles}
+\begin{document}
+\begin{pproblem}
+A square frame of side $a$ and resistance $R$ is placed  next to an infinite conducting wire carrying a current $I$. The wire lies in the plane of the frame and is parallel to two of its sides. The distance from the wire to the near end of the frame is $d$ ($d\gg a$). The frame starts to move away from the wire with constant velocity $v$ (in the plane of the frame and perpendicular to the wire). Find a formula for the total heat $Q$ dissipated at the frame until it is infinitely far from the wire. Calculate $Q$ for $a=\qty{2}{cm}$, $R=\qty{0.01}{\ohm}$, $d=\qty{20}{cm}$, $I=\qty{10}{A}$, $v=\qty{5}{cm/s}$. The inductance of the frame is negligible.
+\end{pproblem}
+
+\ifprob \else
+\begin{solution} The magnetic field at a distance $r$ from the wire is $B=\frac{\mu_0I}{2\pi r}$, and it crosses the frame perpendicularly. When the near end of the frame is at $r$, the flux through the frame would be 
+	\begin{equation*}
+		\Phi = \int_r^{r+a}\frac{\mu_0 I a}{2\pi r}\,\mathrm{d}r= \frac{\mu_0Ia}{2\pi}\ln{\left( \frac{r+a}{r}\right)}
+	.
+	\end{equation*}
+As the frame recedes with velocity $v$, the flux changes, and there's an induced EMF
+\begin{equation*}
+\mathcal{E}=-\frac{\mathrm{d}\Phi}{\mathrm{d}t}=\frac{\mu_0Ia}{2\pi}\left(\frac{r}{r+a}\right)\left( \frac{a}{r^2}\right)v
+.
+\end{equation*}
+This means there's a current $I= \mathcal{E}/R$, and so the instantaneous power dissipation is $P= \mathcal{E}I = \mathcal{E}^2/R$. Now it's time to use $r\gg a$. We reach
+\begin{equation*}
+	P = \left(\frac{\mu_0Iva^2}{2\pi}\right)^2 \left(\frac{1}{R}\right)\, r^{-4}
+.
+\end{equation*}
+We know that $r=d+vt$, and all that's left is to integrate, $Q=\int_0^\infty P\,\mathrm{d}t$. The answer is
+\begin{equation*}
+	\boxed{Q = \frac{\mu_0^2I^2a^4v}{12\pi^2Rd^3}=\qty{1.3e-16}{J}.}
+\end{equation*}
+
+\end{solution}
+\fi
+\end{document}

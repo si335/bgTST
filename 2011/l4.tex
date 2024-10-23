@@ -1,0 +1,28 @@
+\documentclass[../TST.tex]{subfiles}
+\begin{document}
+\begin{pproblem}
+We wish to make a solenoid of inductance $L=\qty{1}{mH}$ and length $l=\qty{1}{m}$. The diameter of the solenoid is $d\ll l$.
+\begin{subpart}
+	\item Find the length of the wire $x$ that we will need. \score{1.5}
+	\item If the wire is made of copper and has a resistance of $R=\qty{1.7}{\ohm}$, find the mass of the solenoid $m$. \score{1.5}
+\end{subpart}
+The density of copper is $\rho_m=\qty{8.9}{g/cm^3}$ and its resistivity is $\rho_R=\qty{17}{n\ohm.m}$.
+\end{pproblem}
+
+\ifprob \else
+\begin{solution} (a) The inductance of the solenoid is $L=\Phi/I$, where $\Phi$ is the magnetic flux through its interior when it carries current $I$. Let the solenoid have $N$ turns. From Ampère's circuital law, the magnetic field inside the solenoid is approximately uniform and equal to $\frac{\mu_0NI}{l}$. The flux through a single turn is $\frac{\mu_0NI}{l}\frac{\pi d^2}{4}$, but there are $N$ of those, so the total flux is $\Phi = \frac{\mu_0 N^2I}{l}\frac{\pi d^2}{4}$. The inductance is then $L=\frac{\mu_0 N^2}{l}\frac{\pi d^2}{4}$. At the same time, the total length of the wire is $x= N\pi d$. We can express this length as
+	\begin{equation*}
+		\boxed{x=\sqrt{\frac{4\pi lL}{\mu_0}}=\qty{100}{m}.}
+	\end{equation*}
+(b) Let the cross-section of the wire be $S_w$. The resistance and mass of the wound wire are respectively given by
+\begin{equation*}
+R=\frac{\rho_R x}{S_w} \quad \mathrm{and} \quad m=\rho_m S_w x.
+\end{equation*}
+We multiply these to cancel $S_w$, and we get
+\begin{equation*}
+	\boxed{m=\frac{4\pi\rho_m\rho_RlL}{\mu_0R}=\qty{0.89}{kg}.}
+\end{equation*}
+
+\end{solution}
+\fi
+\end{document}

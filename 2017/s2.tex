@@ -1,0 +1,65 @@
+\documentclass[../TST.tex]{subfiles}
+\begin{document}
+\begin{large}
+	\textbf{Short Exam 2}
+\end{large}
+
+\begin{sproblem}
+	A solid dielectric\footnote{In the original problem statement, the sphere was conducting. In that case, Part (c) becomes a complicated image charge problem which reduces to a fifth order equation with no analytical solution. Surely this isn't what the problem author intended.} sphere of radius $R$ and relative permittivity $\varepsilon_r=1$ is charged uniformly, such that the total charge is $Q$. The sphere is surrounded by a dielectric medium, also of permittivity $\varepsilon_r=1$. The charge density in the medium varies with distance as $\rho(r)=\alpha/r$, where $\alpha$ is a known constant (and naturally, $r>R$). 
+\begin{subpart}
+	\item Find the charge $Q$ which would make the electric field have a constant magnitude across the medium.  
+	\item Find the magnitude of this electric field $E$. 
+	\item A point charge $q$ of mass $m$ is located at a distance $L$ from the centre of the sphere ($q$ and $Q$ are like). The charge is launched with a velocity $v$ at an angle $\beta\in(0,\frac{\pi}{2})$ from the direction towards the centre of the sphere. For what velocities $v$ will the charge avoid hitting the sphere? Neglect any frictional forces. 
+\end{subpart}
+\end{sproblem}
+
+\ifprob \else
+	\begin{solution} (a) The word `dielectric' seems scary, but in this case it's just used to indicate a medium that holds the charge in place. The electric susceptibility of a material is given by $\chi_e=\varepsilon_r-1$. In our case this is zero, so the polarisation $\mathbf{P}=\varepsilon_0\chi_e\mathbf{E}$ is also zero. Ordinarily the polarisation gives rise to a surface bound charge density $\sigma_b=\mathbf{P}\cdot \hat{\mathbf{n}}$ and a volume bound charge density $\rho_b=-\nabla\cdot \mathbf{P}$, but these are again zero, so we only need to consider the embedded charges from the problem statement.\\[5pt]
+	Consider a sphere of radius $r$. The total charge within is 
+	\begin{equation*}
+	q_\mathrm{in}=Q+\int_R^r \left(\frac{\alpha}{r}\right)\,4\pi r^2 \mathrm{d}r=Q+2\pi\alpha(r^2-R^2).
+	\end{equation*}
+The electric field $\mathbf{E}=E \hat{\mathbf{r}}$ is identical everywhere on the surface of this sphere, so we can find it using Gauss's law:
+\begin{equation*}
+\oint \mathbf{E}\cdot \mathrm{d}\mathbf{S} = \frac{q_\mathrm{in}}{\varepsilon_0} \quad\Rightarrow\quad E=\frac{Q+2\pi\alpha(r^2-R^2)}{4\pi\varepsilon_0 r^2}.
+\end{equation*}
+We now require $E$ to be constant. To eliminate the $r$-dependence, we need \fbox{$Q=2\pi\alpha R^2$}.\\
+
+(b) After substituting the appropriate $Q$, we obtain \fbox{$E=\frac{\alpha}{2\varepsilon_0}$}. Or, in vector form, $\mathbf{E}=\frac{\alpha}{2\varepsilon_0}\hat{\mathbf{r}}$.\\
+
+(c) The electric field outside the sphere is associated with a potential $\varphi=-\int \mathbf{E}\cdot \mathrm{d}\mathbf{r}=-\frac{\alpha r}{2\varepsilon_0}$, where we chose $\varphi=0$ at $r=0$. The total energy of the charge is then 
+\begin{equation*}
+	\mathcal{E}=\frac{mu^2}{2}-\frac{q\alpha r}{2\varepsilon_0}=\frac{mv^2}{2}-\frac{q\alpha L}{2\varepsilon_0}
+.
+\end{equation*}
+We note that $q$ and $Q=2\pi\alpha R^2$ are like, so the potential energy term is always negative no matter the sign of $\alpha$. Thus, the velocity of the charge would decrease closer to the sphere. Next, because the electric field is radial, the angular momentum of the charge is also conserved:
+\begin{equation*}
+	L=mu_\tau r=mvL\sin{\beta}
+.
+\end{equation*}
+We will use this to find an expression for the distance of closest approach $r_\mathrm{min}$. At that point the velocity of the charge is purely tangential, so we can substitute $u=\frac{vL\sin{\beta}}{r_\mathrm{min}}$ in the energy conservation statement. We find
+\begin{equation*}
+\frac{mv^2}{2}\left(\left(\frac{L\sin\beta}{r_\mathrm{min}}\right)^2-1\right) = \frac{q\alpha}{2\varepsilon_0}(L-r_\mathrm{min})
+.
+\end{equation*}
+For the charge to avoid the sphere, we want $r_\mathrm{min}>R$. Since the electrostatic force is repulsive, we'd prefer a small velocity $v$ so that there's enough time for the charge to be sent away from the sphere. Then, for certain angles $\beta$ there's a limiting value for $v$ above which the charge will strike the sphere. We can find it by setting $r_\mathrm{min}=R$:
+\begin{equation*}
+	v^2=\frac{q\alpha}{m\varepsilon_0}\frac{(L-R)R^2}{(L\sin{\beta})^2-R^2}
+.
+\end{equation*}
+We see that for $\sin{\beta}>R/L$, this $v$ is undefined. This makes sense, because for those $\beta$ the charge isn't headed towards the sphere to begin with, so there's no chance of hitting it whatever $v$ is. We can now assemble the following answer for the values of $v$ at which we avoid the sphere:
+\begin{alignat*}{2}
+		&\boxed{v<\sqrt{\frac{q\alpha}{m\varepsilon_0}\frac{(L-R)R^2}{(L\sin{\beta})^2-R^2}}}\,, \quad\quad &&\sin{\beta}<R/L,\\[5pt]
+	&\boxed{\mathrm{Any}\,\,v}\,, &&\sin\beta>R/L.
+\end{alignat*}
+
+\end{solution}
+\fi
+\ifprob 
+	\clearpage
+\else 
+	% \vspace*{10mm}
+	\clearpage
+\fi
+\end{document}
+

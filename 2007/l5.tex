@@ -1,0 +1,25 @@
+\documentclass[../TST.tex]{subfiles}
+\begin{document}
+
+\begin{pproblem}
+A coil of inductance $L=\qty{2.0}{\micro H}$ and internal resistance $r=\qty{1.0}{\ohm}$ is connected in parallel to a resistance $R=\qty{2.0}{\ohm}$. These have been connected to a constant voltage source $E=\qty{3.0}{V}$ for a long time. At time $t=0$ the source is removed from the rest of the circuit. Find the time dependence of the current through the coil $I(t)$. Find the total heat $Q$ dissipated in the coil until the current ceases to flow.
+\end{pproblem}
+
+\ifprob \else
+	\begin{solution} The coil in this problem can be modelled as an ideal inductance $L$ connected in series with a resistance $r$. Before the source is removed, the circuit is in a steady state -- the currents through the components are constant, and there's no back EMF from the inductance. More specifically, the currents through the inductor and the resistor are $I_1=E/r$ and $I_2=E/R$, respectively. When the source is disconnected, the inductor doesn't allow any sudden change in the current through it. Since the back EMF is given by $U_L=-L \frac{\mathrm{d}I}{\mathrm{d}t}$, any significant jump in $I$ within the instant $\mathrm{d}t$ when we're disconnecting the source will result in $U_L$ diverging, which is unphysical. It follows that the initial current (with no source) is $I_1=E/r$ along the whole loop of $L$, $r$, and $R$.\\[5pt]
+		Now, the loop equation is
+		\begin{equation*}
+		\left(-L \frac{\mathrm{d}I}{\mathrm{d}t}\right) - Ir-IR=0,
+		\end{equation*}
+which has the solution
+\begin{equation*}
+I=A e^{-\frac{R+r}{L}t}, \quad I(0)=I_1=\frac{E}{r} \quad\Rightarrow\quad \boxed{I(t)=\left( \frac{E}{r}\right)e^{-\frac{R+r}{L}t}.}
+\end{equation*}
+The heat dissipated at $r$ (i.e.\,at the coil) is then
+\begin{equation*}
+	Q=\int_0^\infty I^2r\, \mathrm{d}t= \boxed{\frac{E^2L}{2(R+r)r}=\qty{3}{\micro J}.}
+\end{equation*}
+
+\end{solution}
+\fi
+\end{document}

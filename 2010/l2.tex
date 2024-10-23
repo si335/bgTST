@@ -1,0 +1,30 @@
+\documentclass[../TST.tex]{subfiles}
+\begin{document}
+
+\begin{pproblem}
+A metal puck of mass $m$ has an outer radius $b$ and an inner radius $a$.
+\begin{subpart}
+	\item Find the moment of inertia of the puck about an axis perpendicular to the puck and passing through its centre of mass. \score{1.0}
+	\item The puck is tied on a very thin string and is left to oscillate around its equilibrium position. Find the oscillation period $T$. The acceleration due to gravity is $g$. \score{2.0}
+\end{subpart}
+\end{pproblem}
+
+\ifprob \else
+\begin{solution} (a) Assume the puck is uniform and denote its thickness by $d$. Its density is then $\rho=\frac{m}{\pi(b^2-a^2)d}$. The moment of inertia is calculated similarly to that of a cylinder,
+	\begin{equation*}
+		I=\int_a^b (\rho d 2\pi r \mathrm{d}r)r^2=\left(\frac{m}{\pi(b^2-a^2)d}\right)2\pi d \left( \frac{b^4-a^4}{4}\right)=\boxed{\frac{1}{2}m(b^2+a^2).}
+	\end{equation*}
+(b) The problem statement is unclear, but because length of the string isn't given, the only feasible option is that the string is kept horizontal and taut. We will also have to assume that the puck doesn't slide on the string. Now we have a physical pendulum with its pivot at $a$ from its centre of mass. Using the parallel axis theorem, the moment of inertia about the pivot is $I'=I+ma^2$. For small deviations $\theta$ from the equilibrium position, the torque equation about the pivot is 
+\begin{equation*}
+	I'\ddot{\theta}+mga\theta=0
+.
+\end{equation*}
+This corresponds to harmonic oscillations with a period of 
+\begin{equation*}
+	T=2\pi\sqrt{\frac{I'}{mga}}=\boxed{2\pi\sqrt{\frac{b^2+3a^2}{2ga}}.}
+\end{equation*}
+
+
+\end{solution}
+\fi
+\end{document}
